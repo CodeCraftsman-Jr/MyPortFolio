@@ -136,8 +136,8 @@ export const AboutSection = () => {
   ];
 
   const technologies = [
-    "React", "TypeScript", "Next.js", "Tailwind CSS", "Node.js", 
-    "Python", "PostgreSQL", "AWS", "Docker", "Figma"
+    "Python", "React", "Firebase", "C", "C++", 
+    "Java", "AutoCAD", "Microsoft 365", "Frontend Development", "Backend Development"
   ];
 
   return (
@@ -167,7 +167,8 @@ export const AboutSection = () => {
             </p>
           </div>
 
-          <div className="grid gap-12 mb-16">
+          {/* Resume Sections */}
+          <div className="grid gap-8">
             <Card>
               <CardContent className="p-6">
                 <div className="flex items-center gap-2 mb-4">
@@ -269,40 +270,54 @@ export const AboutSection = () => {
             </Card>
           </div>
 
-          {/* Resume Sections */}
-          <div className="grid gap-8">
-            {/* Education, Experience, Projects, and Freelance Work Cards */}
-            <div className="grid gap-8">
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <GraduationCap className="w-6 h-6" />
-                    <h3 className="text-2xl font-bold">Education</h3>
-                  </div>
-                  <div className="space-y-6">
-                    {education.map((edu, index) => (
-                      <div key={index} className="border-b last:border-0 pb-4 last:pb-0">
-                        <h4 className="font-semibold text-lg">{edu.school}</h4>
-                        <p className="text-muted-foreground">{edu.location}</p>
-                        {edu.degree && (
-                          <>
-                            <p>{edu.degree} in {edu.major} - {edu.date}</p>
-                            <p>GPA: {edu.gpa}</p>
-                            <p className="text-sm mt-1">Coursework: {edu.courses}</p>
-                          </>
-                        )}
-                        {edu.details && (
-                          <ul className="list-disc list-inside text-sm space-y-1 mt-2">
-                            {edu.details.map((detail, i) => (
-                              <li key={i}>{detail}</li>
-                            ))}
-                          </ul>
-                        )}
+          {/* Skills and Technologies Section */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Technical Skills</h3>
+                <div className="flex flex-wrap gap-2">
+                  {technologies.map((tech) => (
+                    <Badge key={tech} variant="secondary" className="text-sm">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Profile</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Computer Science Engineering Student at Sri Venkateshwaraa College of Engineering and Technology.
+                  Full Stack Developer with expertise in Python, React, and Firebase.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-6">
+              {features.map((feature, index) => (
+                <Card 
+                  key={feature.title} 
+                  className="glass border-border/20 hover:border-primary/30 transition-colors"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-lg bg-primary/10">
+                        <feature.icon className="h-6 w-6 text-primary" />
                       </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                      <div>
+                        <h4 className="text-lg font-semibold mb-2">
+                          {feature.title}
+                        </h4>
+                        <p className="text-muted-foreground">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
 
               <Card>
                 <CardContent className="p-6">
@@ -389,19 +404,20 @@ export const AboutSection = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-semibold mb-4">
-                    Building the future, one pixel at a time
+                    Computer Science Student & Full Stack Developer
                   </h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    I'm a full-stack developer with a passion for creating beautiful, 
-                    functional digital experiences. With over 5 years of experience, 
-                    I specialize in modern web technologies and have a keen eye for design.
+                    I'm a Computer Science Engineering student with a passion for building
+                    modern web applications. I specialize in Python, React, and Firebase,
+                    creating efficient and user-friendly solutions.
                   </p>
                 </div>
               </div>
               
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies, 
-                contributing to open source projects, or mentoring aspiring developers.
+                Currently pursuing my Bachelor's in Computer Science Engineering with a strong
+                focus on full-stack development and modern technologies. Always eager to learn
+                and take on new challenges.
               </p>
               
               <div className="flex flex-wrap gap-2">

@@ -57,27 +57,25 @@ export const HeroSection = () => {
                 </div>
                 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                  Creative{" "}
-                  <span className="gradient-text">Developer</span>
-                  <br />
-                  & Designer
+                  VASANTHAN{" "}
+                  <span className="gradient-text">E</span>
                 </h1>
               </div>
               
               <div className="animate-fade-in-right" style={{ animationDelay: '0.4s' }}>
                 <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl lg:max-w-none">
-                  I craft beautiful digital experiences with modern technologies and stunning design. 
-                  Passionate about creating solutions that make a difference.
+                  Computer Science Engineering Student at Sri Venkateshwaraa College of Engineering and Technology.
+                  Full Stack Developer with expertise in Python, React, and Firebase.
                 </p>
                 
                 {/* Stats */}
                 <div className="flex flex-wrap gap-6 justify-center lg:justify-start mb-8">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">5+</div>
-                    <div className="text-sm text-muted-foreground">Years Experience</div>
+                    <div className="text-2xl font-bold text-primary">7.5</div>
+                    <div className="text-sm text-muted-foreground">CGPA</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-accent">50+</div>
+                    <div className="text-2xl font-bold text-accent">2026</div>
                     <div className="text-sm text-muted-foreground">Projects Completed</div>
                   </div>
                   <div className="text-center">
@@ -108,19 +106,23 @@ export const HeroSection = () => {
 
               <div className="animate-fade-in-right flex justify-center lg:justify-start gap-4" style={{ animationDelay: '0.8s' }}>
                 <a
-                  href="#"
+                  href="https://github.com/CodeCraftsman-Jr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-4 rounded-2xl glass hover:bg-primary/20 transition-all duration-300 group hover:scale-110"
                 >
                   <Github className="h-6 w-6 group-hover:text-primary transition-colors" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/vasanthan-e-cse-5556a2327/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-4 rounded-2xl glass hover:bg-accent/20 transition-all duration-300 group hover:scale-110"
                 >
                   <Linkedin className="h-6 w-6 group-hover:text-accent transition-colors" />
                 </a>
                 <a
-                  href="#"
+                  href="mailto:dev.vasanthan.tech@gmail.com"
                   className="p-4 rounded-2xl glass hover:bg-accent/20 transition-all duration-300 group hover:scale-110"
                 >
                   <Mail className="h-6 w-6 group-hover:text-accent transition-colors" />
