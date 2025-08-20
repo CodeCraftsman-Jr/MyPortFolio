@@ -18,3 +18,15 @@ if (fs.existsSync(path.join('public', '.nojekyll'))) {
   fs.copyFileSync(path.join('public', '.nojekyll'), path.join('dist', '.nojekyll'));
   console.log('✓ .nojekyll copied to dist');
 }
+
+// Copy .htaccess file
+if (fs.existsSync(path.join('public', '.htaccess'))) {
+  fs.copyFileSync(path.join('public', '.htaccess'), path.join('dist', '.htaccess'));
+  console.log('✓ .htaccess copied to dist');
+}
+
+// Copy _headers file
+if (fs.existsSync(path.join('public', '_headers'))) {
+  fs.copyFileSync(path.join('public', '_headers'), path.join('dist', '_headers'));
+  console.log('✓ _headers copied to dist');
+}

@@ -1,0 +1,11 @@
+/*
+  Content-Type: text/html; charset=UTF-8
+
+/assets/*.js
+  Content-Type: application/javascript; charset=UTF-8
+
+/assets/*.css
+  Content-Type: text/css; charset=UTF-8
+
+/favicon.ico
+  Content-Type: image/x-icon
