@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && node copy-files.js",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
