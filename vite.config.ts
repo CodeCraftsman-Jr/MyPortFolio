@@ -19,6 +19,11 @@ export default defineConfig(({ mode }) => ({
     }
   },
   server: {
+    headers: {
+      'Content-Type': 'application/javascript'
+    }
+  },
+  server: {
     host: true,
     port: 8080,
     strictPort: true,

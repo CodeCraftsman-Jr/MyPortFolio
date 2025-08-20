@@ -3,6 +3,11 @@
 
 /assets/*.js
   Content-Type: application/javascript; charset=UTF-8
+  X-Content-Type-Options: nosniff
+
+/*.js
+  Content-Type: application/javascript; charset=UTF-8
+  X-Content-Type-Options: nosniff
 
 /assets/*.css
   Content-Type: text/css; charset=UTF-8
