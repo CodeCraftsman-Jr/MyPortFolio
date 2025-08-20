@@ -143,8 +143,9 @@ export const AboutSection = () => {
   return (
     <section id="about" className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+        <div className="max-w-6xl mx-auto space-y-16">
+          {/* Header Section */}
+          <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
               {personalInfo.name}
             </h2>
@@ -268,9 +269,116 @@ export const AboutSection = () => {
             </Card>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Resume Sections */}
+          <div className="grid gap-8">
+            {/* Education, Experience, Projects, and Freelance Work Cards */}
+            <div className="grid gap-8">
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <GraduationCap className="w-6 h-6" />
+                    <h3 className="text-2xl font-bold">Education</h3>
+                  </div>
+                  <div className="space-y-6">
+                    {education.map((edu, index) => (
+                      <div key={index} className="border-b last:border-0 pb-4 last:pb-0">
+                        <h4 className="font-semibold text-lg">{edu.school}</h4>
+                        <p className="text-muted-foreground">{edu.location}</p>
+                        {edu.degree && (
+                          <>
+                            <p>{edu.degree} in {edu.major} - {edu.date}</p>
+                            <p>GPA: {edu.gpa}</p>
+                            <p className="text-sm mt-1">Coursework: {edu.courses}</p>
+                          </>
+                        )}
+                        {edu.details && (
+                          <ul className="list-disc list-inside text-sm space-y-1 mt-2">
+                            {edu.details.map((detail, i) => (
+                              <li key={i}>{detail}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Briefcase className="w-6 h-6" />
+                    <h3 className="text-2xl font-bold">Work Experience</h3>
+                  </div>
+                  <div className="space-y-6">
+                    {workExperience.map((work, index) => (
+                      <div key={index} className="border-b last:border-0 pb-4 last:pb-0">
+                        <h4 className="font-semibold text-lg">{work.company}</h4>
+                        <p className="text-muted-foreground">{work.location}</p>
+                        <p>{work.position} | {work.duration}</p>
+                        <ul className="list-disc list-inside text-sm space-y-1 mt-2">
+                          {work.achievements.map((achievement, i) => (
+                            <li key={i}>{achievement}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Code2 className="w-6 h-6" />
+                    <h3 className="text-2xl font-bold">Projects</h3>
+                  </div>
+                  <div className="space-y-6">
+                    {projects.map((project, index) => (
+                      <div key={index} className="border-b last:border-0 pb-4 last:pb-0">
+                        <h4 className="font-semibold text-lg">{project.name}</h4>
+                        <p className="text-muted-foreground">{project.date}</p>
+                        <ul className="list-disc list-inside text-sm space-y-1 mt-2">
+                          {project.details.map((detail, i) => (
+                            <li key={i}>{detail}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Laptop className="w-6 h-6" />
+                    <h3 className="text-2xl font-bold">Freelance Work</h3>
+                  </div>
+                  <div className="space-y-6">
+                    {freelanceWork.map((work, index) => (
+                      <div key={index} className="border-b last:border-0 pb-4 last:pb-0">
+                        <h4 className="font-semibold text-lg">{work.project}</h4>
+                        <p className="text-muted-foreground">{work.location}</p>
+                        {work.role && <p>{work.role} | {work.duration}</p>}
+                        {!work.role && <p>{work.duration}</p>}
+                        <ul className="list-disc list-inside text-sm space-y-1 mt-2">
+                          {work.details.map((detail, i) => (
+                            <li key={i}>{detail}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Skills and Features Section */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="animate-fade-in-left">
-              {/* Additional profile photo for about section */}
+              {/* Profile photo and about section */}
               <div className="flex flex-col md:flex-row gap-6 items-start mb-8">
                 <div className="w-24 h-24 md:w-32 md:h-32 flex-shrink-0">
                   <img
