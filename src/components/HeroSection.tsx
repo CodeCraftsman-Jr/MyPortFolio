@@ -57,25 +57,27 @@ export const HeroSection = () => {
                 </div>
                 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                  VASANTHAN{" "}
-                  <span className="gradient-text">E</span>
+                  Creative{" "}
+                  <span className="gradient-text">Developer</span>
+                  <br />
+                  & Designer
                 </h1>
               </div>
               
               <div className="animate-fade-in-right" style={{ animationDelay: '0.4s' }}>
                 <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl lg:max-w-none">
-                  Computer Science Engineering Student at Sri Venkateshwaraa College of Engineering and Technology.
-                  Full Stack Developer with expertise in Python, React, and Firebase.
+                  I craft beautiful digital experiences with modern technologies and stunning design. 
+                  Passionate about creating solutions that make a difference.
                 </p>
                 
                 {/* Stats */}
                 <div className="flex flex-wrap gap-6 justify-center lg:justify-start mb-8">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">7.5</div>
-                    <div className="text-sm text-muted-foreground">CGPA</div>
+                    <div className="text-2xl font-bold text-primary">5+</div>
+                    <div className="text-sm text-muted-foreground">Years Experience</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-accent">2026</div>
+                    <div className="text-2xl font-bold text-accent">50+</div>
                     <div className="text-sm text-muted-foreground">Projects Completed</div>
                   </div>
                   <div className="text-center">
