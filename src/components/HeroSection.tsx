@@ -57,7 +57,7 @@ export const HeroSection = () => {
                 </div>
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                  <span className="gradient-text">MOHANAKRISHNAN S</span>
+                  <span className="gradient-text">VASANTHAN E</span>
                   <br />
                   <span className="text-3xl md:text-4xl lg:text-5xl">Full Stack Developer</span>
                 </h1>
@@ -76,7 +76,7 @@ export const HeroSection = () => {
                   </span>
                   <span className="flex items-center gap-2">
                     <Phone className="h-4 w-4 text-accent" />
-                    +91 9342634167
+                    +91 9442434269
                   </span>
                   <span className="flex items-center gap-2">
                     <Mail className="h-4 w-4 text-accent" />
@@ -122,7 +122,7 @@ export const HeroSection = () => {
 
               <div className="animate-fade-in-right flex justify-center lg:justify-start gap-4" style={{ animationDelay: '0.8s' }}>
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/CodeCraftsman-Jr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 rounded-2xl glass hover:bg-primary/20 transition-all duration-300 group hover:scale-110"
@@ -130,7 +130,7 @@ export const HeroSection = () => {
                   <Github className="h-6 w-6 group-hover:text-primary transition-colors" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourprofile"
+                  href="https://www.linkedin.com/in/vasanthan-e-cse-5556a2327"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 rounded-2xl glass hover:bg-accent/20 transition-all duration-300 group hover:scale-110"
@@ -138,7 +138,7 @@ export const HeroSection = () => {
                   <Linkedin className="h-6 w-6 group-hover:text-accent transition-colors" />
                 </a>
                 <a
-                  href="https://hackerrank.com/yourprofile"
+                  href="https://www.hackerrank.com/dominicvasanth71"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 rounded-2xl glass hover:bg-accent/20 transition-all duration-300 group hover:scale-110"
@@ -146,7 +146,7 @@ export const HeroSection = () => {
                   <div className="h-6 w-6 text-accent group-hover:text-accent transition-colors font-bold text-sm flex items-center justify-center">HR</div>
                 </a>
                 <a
-                  href="https://leetcode.com/yourprofile"
+                  href="https://leetcode.com/u/VasanthanVarsys/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 rounded-2xl glass hover:bg-accent/20 transition-all duration-300 group hover:scale-110"
