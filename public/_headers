@@ -13,6 +13,14 @@
   Content-Type: text/javascript; charset=UTF-8
   X-Content-Type-Options: nosniff
 
+/*.ts
+  Content-Type: text/javascript; charset=UTF-8
+  X-Content-Type-Options: nosniff
+
+/*.tsx
+  Content-Type: text/javascript; charset=UTF-8
+  X-Content-Type-Options: nosniff
+
 /assets/*.css
   Content-Type: text/css; charset=UTF-8
 
