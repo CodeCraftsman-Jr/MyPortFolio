@@ -2,11 +2,15 @@
   Content-Type: text/html; charset=UTF-8
 
 /assets/*.js
-  Content-Type: application/javascript; charset=UTF-8
+  Content-Type: text/javascript; charset=UTF-8
   X-Content-Type-Options: nosniff
 
 /*.js
-  Content-Type: application/javascript; charset=UTF-8
+  Content-Type: text/javascript; charset=UTF-8
+  X-Content-Type-Options: nosniff
+
+/*.mjs
+  Content-Type: text/javascript; charset=UTF-8
   X-Content-Type-Options: nosniff
 
 /assets/*.css
