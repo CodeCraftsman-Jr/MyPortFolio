@@ -6,50 +6,50 @@ import { ExternalLink, Github } from "lucide-react";
 export const ProjectsSection = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce platform built with Next.js and Stripe integration, featuring real-time inventory management and advanced analytics.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
-      tags: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+      title: "Personal Finance & Production Management App",
+      description: "Python-based dashboard with income/expense tracking, visual analytics, goal-based budgeting, attendance tracking and financial insights. Integrated Google Tasks API and Zerodha API for task management and real-time stock tracking with forecasting.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
+      tags: ["Python", "Google Tasks API", "Zerodha API", "Data Analytics"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "AI-Powered Dashboard",
-      description: "Analytics dashboard with machine learning insights, real-time data visualization, and predictive modeling capabilities.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
-      tags: ["React", "Python", "TensorFlow", "D3.js"],
+      title: "Sales & Inventory Management System",
+      description: "Python-based system with daily/monthly tracking, low-stock alerts, and profit/loss analysis per item. Implemented growth prediction and business performance insights using historical sales data and Firebase integration.",
+      image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&q=80&w=800",
+      tags: ["Python", "Firebase", "Data Forecasting", "Real-time Database"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Social Media App",
-      description: "Full-stack social media application with real-time messaging, content sharing, and advanced privacy controls.",
-      image: "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=500&h=300&fit=crop",
-      tags: ["React Native", "Node.js", "Socket.io", "MongoDB"],
+      title: "Facial Recognition Attendance System",
+      description: "Python application using OpenCV for facial recognition-based attendance tracking with automated payroll generation. Calculates working hours, bonuses, and deductions with complete salary processing system.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+      tags: ["Python", "OpenCV", "Facial Recognition", "Payroll Automation"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "3D Portfolio Website",
-      description: "Interactive 3D portfolio built with Three.js featuring immersive experiences and smooth animations.",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&h=300&fit=crop",
-      tags: ["Three.js", "WebGL", "React", "GSAP"],
+      title: "Restaurant Website Template",
+      description: "Complete restaurant website with blogging page for customers and owners, showcase gallery for menu, online ordering system with real-time order tracking, and pre-booking features. Secure authentication using Firebase.",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=800",
+      tags: ["Web Development", "Firebase", "Real-time Tracking", "Authentication"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Fintech Mobile App",
-      description: "Secure financial application with biometric authentication, real-time transactions, and investment tracking.",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop",
-      tags: ["Flutter", "Firebase", "Plaid API", "Chart.js"],
+      title: "Attention Span Assessment Platform",
+      description: "Website with 4 tasks to measure attention span based on reaction time, featuring authentication using Firebase, payment integration with RazorPay, and customizable subscription module for organizations.",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=800",
+      tags: ["Web Development", "Firebase", "RazorPay", "Psychology Assessment"],
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Smart Home Dashboard",
-      description: "IoT dashboard for smart home management with device control, energy monitoring, and automation rules.",
-      image: "https://images.unsplash.com/photo-1558618047-85c4c2909d19?w=500&h=300&fit=crop",
-      tags: ["Vue.js", "MQTT", "InfluxDB", "Docker"],
+      title: "Doctor's Website with E-commerce",
+      description: "Comprehensive website for a doctor with online booking and consultation features, integrated with an e-commerce platform for selling ayurvedic medicines. Built using Wix platform.",
+      image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80&w=800",
+      tags: ["Wix Development", "E-commerce", "Online Booking", "Healthcare"],
       liveUrl: "#",
       githubUrl: "#"
     }

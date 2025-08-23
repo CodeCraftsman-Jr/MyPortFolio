@@ -7,30 +7,30 @@ export const SkillsSection = () => {
   
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "Programming Languages",
       skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 88 },
-        { name: "Three.js", level: 75 }
+        { name: "Python", level: 90 },
+        { name: "JavaScript/TypeScript", level: 85 },
+        { name: "C/C++", level: 80 },
+        { name: "Java", level: 75 }
       ]
     },
     {
-      title: "Backend Development", 
+      title: "Web Development", 
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Python", level: 80 },
-        { name: "PostgreSQL", level: 82 },
-        { name: "GraphQL", level: 78 }
+        { name: "React/Next.js", level: 85 },
+        { name: "Node.js", level: 80 },
+        { name: "Firebase", level: 85 },
+        { name: "HTML/CSS", level: 90 }
       ]
     },
     {
-      title: "Tools & Design",
+      title: "Tools & Technologies",
       skills: [
-        { name: "Figma", level: 92 },
-        { name: "Docker", level: 80 },
-        { name: "AWS", level: 75 },
-        { name: "Git", level: 95 }
+        { name: "Git", level: 80 },
+        { name: "AutoCAD", level: 70 },
+        { name: "Microsoft 365", level: 85 },
+        { name: "OpenCV", level: 75 }
       ]
     }
   ];

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 export const HeroSection = () => {
@@ -56,17 +56,33 @@ export const HeroSection = () => {
                   <span className="text-sm text-accent font-medium">👋 Hello, I'm</span>
                 </div>
                 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                  VASANTHAN{" "}
-                  <span className="gradient-text">E</span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  <span className="gradient-text">MOHANAKRISHNAN S</span>
+                  <br />
+                  <span className="text-3xl md:text-4xl lg:text-5xl">Full Stack Developer</span>
                 </h1>
               </div>
               
               <div className="animate-fade-in-right" style={{ animationDelay: '0.4s' }}>
-                <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl lg:max-w-none">
-                  Computer Science Engineering Student at Sri Venkateshwaraa College of Engineering and Technology.
-                  Full Stack Developer with expertise in Python, React, and Firebase.
+                <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl lg:max-w-none">
+                  Computer Science Engineering student specializing in Frontend/Backend Development. 
+                  Experienced in Python, React, Node.js, and Firebase with a passion for creating innovative solutions.
                 </p>
+                
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8 text-sm">
+                  <span className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-accent" />
+                    Pondicherry, 605013
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Phone className="h-4 w-4 text-accent" />
+                    +91 9342634167
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Mail className="h-4 w-4 text-accent" />
+                    dev.vasathan.tech@gmail.com
+                  </span>
+                </div>
                 
                 {/* Stats */}
                 <div className="flex flex-wrap gap-6 justify-center lg:justify-start mb-8">
@@ -76,11 +92,11 @@ export const HeroSection = () => {
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-accent">2026</div>
-                    <div className="text-sm text-muted-foreground">Projects Completed</div>
+                    <div className="text-sm text-muted-foreground">Expected Graduation</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">100%</div>
-                    <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+                    <div className="text-2xl font-bold text-primary">5+</div>
+                    <div className="text-sm text-muted-foreground">Major Projects</div>
                   </div>
                 </div>
               </div>
@@ -106,7 +122,7 @@ export const HeroSection = () => {
 
               <div className="animate-fade-in-right flex justify-center lg:justify-start gap-4" style={{ animationDelay: '0.8s' }}>
                 <a
-                  href="https://github.com/CodeCraftsman-Jr"
+                  href="https://github.com/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 rounded-2xl glass hover:bg-primary/20 transition-all duration-300 group hover:scale-110"
@@ -114,7 +130,7 @@ export const HeroSection = () => {
                   <Github className="h-6 w-6 group-hover:text-primary transition-colors" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/vasanthan-e-cse-5556a2327/"
+                  href="https://linkedin.com/in/yourprofile"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 rounded-2xl glass hover:bg-accent/20 transition-all duration-300 group hover:scale-110"
@@ -122,10 +138,20 @@ export const HeroSection = () => {
                   <Linkedin className="h-6 w-6 group-hover:text-accent transition-colors" />
                 </a>
                 <a
-                  href="mailto:dev.vasanthan.tech@gmail.com"
+                  href="https://hackerrank.com/yourprofile"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-4 rounded-2xl glass hover:bg-accent/20 transition-all duration-300 group hover:scale-110"
                 >
-                  <Mail className="h-6 w-6 group-hover:text-accent transition-colors" />
+                  <div className="h-6 w-6 text-accent group-hover:text-accent transition-colors font-bold text-sm flex items-center justify-center">HR</div>
+                </a>
+                <a
+                  href="https://leetcode.com/yourprofile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-2xl glass hover:bg-accent/20 transition-all duration-300 group hover:scale-110"
+                >
+                  <div className="h-6 w-6 text-accent group-hover:text-accent transition-colors font-bold text-sm flex items-center justify-center">LC</div>
                 </a>
               </div>
             </div>

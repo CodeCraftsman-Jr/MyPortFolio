@@ -32,19 +32,19 @@ export const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      detail: "hello@portfolio.dev",
-      action: "mailto:hello@portfolio.dev"
+      detail: "dev.vasathan.tech@gmail.com",
+      action: "mailto:dev.vasathan.tech@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      detail: "+1 (555) 123-4567",
-      action: "tel:+15551234567"
+      detail: "+91 9342634167",
+      action: "tel:+919342634167"
     },
     {
       icon: MapPin,
       title: "Location",
-      detail: "San Francisco, CA",
+      detail: "Pondicherry, 605013",
       action: "#"
     }
   ];
