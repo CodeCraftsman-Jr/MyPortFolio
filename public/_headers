@@ -1,23 +1,26 @@
 /*
-  Content-Type: text/html; charset=UTF-8
-
-/assets/*.js
-  Content-Type: text/javascript; charset=UTF-8
   X-Content-Type-Options: nosniff
+
+/*.html
+  Content-Type: text/html; charset=UTF-8
 
 /*.js
   Content-Type: text/javascript; charset=UTF-8
-  X-Content-Type-Options: nosniff
 
 /*.mjs
   Content-Type: text/javascript; charset=UTF-8
-  X-Content-Type-Options: nosniff
 
 /*.ts
   Content-Type: text/javascript; charset=UTF-8
-  X-Content-Type-Options: nosniff
 
 /*.tsx
+  Content-Type: text/javascript; charset=UTF-8
+
+/*.json
+  Content-Type: application/json; charset=UTF-8
+
+/*.css
+  Content-Type: text/css; charset=UTF-8
   Content-Type: text/javascript; charset=UTF-8
   X-Content-Type-Options: nosniff
 
