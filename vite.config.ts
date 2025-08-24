@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src")
     }
   },
+  assetsInclude: ['**/*.JPG', '**/*.JPEG'],
   build: {
     outDir: 'dist',
     emptyOutDir: true,
