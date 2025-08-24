@@ -5,9 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use relative base path for GitHub Pages compatibility
-  // This works for both custom domains and github.io subdirectories
-  base: './',
+  // Use root path for custom domain (vasanthan.tech)
+  // For custom domains, use '/' instead of './'
+  base: '/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src")
@@ -16,12 +16,16 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    // Ensure proper module format for GitHub Pages
+    target: 'es2015',
     rollupOptions: {
       output: {
         // Include hash for better caching and unique filenames
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        // Ensure proper format
+        format: 'es'
       }
     }
   },

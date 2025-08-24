@@ -29,8 +29,5 @@ if (fs.existsSync(path.join('public', '.htaccess'))) {
   console.log('✓ .htaccess copied to dist');
 }
 
-// Copy _headers file
-if (fs.existsSync(path.join('public', '_headers'))) {
-  fs.copyFileSync(path.join('public', '_headers'), path.join('dist', '_headers'));
-  console.log('✓ _headers copied to dist');
-}
+// Note: _headers file removed as GitHub Pages doesn't support it
+// GitHub Pages determines MIME types based on file extensions
