@@ -13,10 +13,14 @@ if (fs.existsSync(path.join('public', '404.html'))) {
   console.log('✓ 404.html copied to dist');
 }
 
-// Copy .nojekyll file
+// Copy .nojekyll file (essential for GitHub Pages)
 if (fs.existsSync(path.join('public', '.nojekyll'))) {
   fs.copyFileSync(path.join('public', '.nojekyll'), path.join('dist', '.nojekyll'));
   console.log('✓ .nojekyll copied to dist');
+} else {
+  // Create .nojekyll if it doesn't exist
+  fs.writeFileSync(path.join('dist', '.nojekyll'), '');
+  console.log('✓ .nojekyll created in dist');
 }
 
 // Copy .htaccess file

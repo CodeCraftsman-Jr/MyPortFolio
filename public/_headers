@@ -1,37 +1,32 @@
 /*
   X-Content-Type-Options: nosniff
-  
+
 /*.html
   Content-Type: text/html; charset=UTF-8
 
 /*.js
-  Content-Type: application/javascript
+  Content-Type: application/javascript; charset=UTF-8
   Cache-Control: max-age=31536000, immutable
 
 /*.mjs
-  Content-Type: application/javascript
+  Content-Type: application/javascript; charset=UTF-8
   Cache-Control: max-age=31536000, immutable
 
-/*.ts
-  Content-Type: application/javascript
-  Cache-Control: max-age=31536000, immutable
-
-/*.tsx
-  Content-Type: application/javascript
+/assets/*.js
+  Content-Type: application/javascript; charset=UTF-8
   Cache-Control: max-age=31536000, immutable
 
 /*.json
-  Content-Type: application/json
+  Content-Type: application/json; charset=UTF-8
   Cache-Control: max-age=31536000, immutable
 
 /*.css
-  Content-Type: text/css
+  Content-Type: text/css; charset=UTF-8
   Cache-Control: max-age=31536000, immutable
-  Content-Type: text/javascript; charset=UTF-8
-  X-Content-Type-Options: nosniff
 
 /assets/*.css
   Content-Type: text/css; charset=UTF-8
+  Cache-Control: max-age=31536000, immutable
 
 /favicon.ico
   Content-Type: image/x-icon
