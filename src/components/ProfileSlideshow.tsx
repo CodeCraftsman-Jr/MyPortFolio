@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import profilePhoto1 from "@/assets/profile-photo-1.jpg";
+import profilePhoto1 from "@/assets/profile-photo-1.JPG";
 import profilePhoto2 from "@/assets/profile-photo-2.jpg";
 import profilePhoto3 from "@/assets/profile-photo-3.jpg";
 import profilePhoto4 from "@/assets/profile-photo-4.jpg";
-import profilePhoto5 from "@/assets/profile-photo-5.jpg";
+import profilePhoto5 from "@/assets/profile-photo-5.JPG";
 import profilePhoto6 from "@/assets/profile-photo-6.jpg";
 
 interface ProfileSlideshowProps {
