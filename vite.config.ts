@@ -20,14 +20,20 @@ export default defineConfig(({ mode }) => ({
     target: 'es2015',
     rollupOptions: {
       output: {
-        // Include hash for better caching and unique filenames
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
+        // Use .mjs extension for better GitHub Pages compatibility
+        entryFileNames: 'assets/[name]-[hash].mjs',
+        chunkFileNames: 'assets/[name]-[hash].mjs',
         assetFileNames: 'assets/[name]-[hash].[ext]',
-        // Ensure proper format
-        format: 'es'
+        // Ensure proper format for GitHub Pages
+        format: 'es',
+        // Add explicit exports for better compatibility
+        exports: 'named'
       }
-    }
+    },
+    // Ensure proper asset handling
+    assetsDir: 'assets',
+    // Generate manifest for better asset resolution
+    manifest: false
   },
   plugins: [
     react(),

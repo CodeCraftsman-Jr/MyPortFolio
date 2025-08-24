@@ -29,5 +29,11 @@ if (fs.existsSync(path.join('public', '.htaccess'))) {
   console.log('✓ .htaccess copied to dist');
 }
 
+// Copy web.config file for IIS/GitHub Pages MIME type support
+if (fs.existsSync(path.join('public', 'web.config'))) {
+  fs.copyFileSync(path.join('public', 'web.config'), path.join('dist', 'web.config'));
+  console.log('✓ web.config copied to dist');
+}
+
 // Note: _headers file removed as GitHub Pages doesn't support it
 // GitHub Pages determines MIME types based on file extensions
