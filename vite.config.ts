@@ -5,8 +5,6 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use root path for custom domain (vasanthan.tech)
-  // For custom domains, use '/' instead of './'
   base: '/',
   resolve: {
     alias: {
@@ -16,24 +14,16 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    // Ensure proper module format for GitHub Pages
     target: 'es2015',
     rollupOptions: {
       output: {
-        // Place JS files in root directory to avoid GitHub Pages asset serving issues
-        entryFileNames: '[name]-[hash].js',
-        chunkFileNames: '[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash].[ext]',
-        // Ensure proper format for GitHub Pages
-        format: 'es',
-        // Add explicit exports for better compatibility
-        exports: 'named'
+        format: 'es'
       }
     },
-    // Ensure proper asset handling
-    assetsDir: 'assets',
-    // Generate manifest for better asset resolution
-    manifest: false
+    assetsDir: 'assets'
   },
   plugins: [
     react(),
@@ -41,10 +31,16 @@ export default defineConfig(({ mode }) => ({
   ].filter(Boolean),
   server: {
     port: 8080,
-    strictPort: true,
-    headers: {
-      "Content-Type": "application/javascript",
-      "X-Content-Type-Options": "nosniff"
+    host: '0.0.0.0',
+    strictPort: false,
+    open: false,
+    // Ensure proper MIME type handling
+    middlewareMode: false,
+    fs: {
+      strict: false
     }
+  },
+  esbuild: {
+    target: 'es2015'
   }
 }));
