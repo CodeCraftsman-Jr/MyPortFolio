@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Code, Palette, Rocket } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import { ProfileSlideshow } from "@/components/ProfileSlideshow";
 
 export const AboutSection = () => {
   const features = [
@@ -46,10 +46,9 @@ export const AboutSection = () => {
               {/* Additional profile photo for about section */}
               <div className="flex flex-col md:flex-row gap-6 items-start mb-8">
                 <div className="w-24 h-24 md:w-32 md:h-32 flex-shrink-0">
-                  <img
-                    src={profilePhoto}
+                  <ProfileSlideshow
+                    className="w-full h-full rounded-2xl border-2 border-accent/20"
                     alt="About me"
-                    className="w-full h-full rounded-2xl object-cover border-2 border-accent/20"
                   />
                 </div>
                 <div className="flex-1">

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import { ProfileSlideshow } from "@/components/ProfileSlideshow";
 
 export const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -21,14 +21,13 @@ export const HeroSection = () => {
               <div className="relative group">
                 {/* Main Profile Photo */}
                 <div className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px]">
-                  <img
-                    src={profilePhoto}
+                  <ProfileSlideshow
+                    className="w-full h-full rounded-3xl border-4 border-primary/30 glow-primary shadow-2xl"
                     alt="Professional Profile"
-                    className="w-full h-full rounded-3xl object-cover border-4 border-primary/30 glow-primary shadow-2xl"
                   />
                   
                   {/* Animated Gradient Overlay */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 via-transparent to-accent/20 animate-pulse-glow" />
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 via-transparent to-accent/20 animate-pulse-glow pointer-events-none" />
                   
                   {/* Floating Elements */}
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-float opacity-80" />
@@ -36,7 +35,7 @@ export const HeroSection = () => {
                   <div className="absolute top-1/4 -right-8 w-6 h-6 bg-accent rounded-full animate-float" style={{ animationDelay: '2s' }} />
                   
                   {/* Decorative Ring */}
-                  <div className="absolute inset-0 rounded-3xl border-2 border-accent/20 transform scale-110 animate-pulse-glow" style={{ animationDelay: '0.5s' }} />
+                  <div className="absolute inset-0 rounded-3xl border-2 border-accent/20 transform scale-110 animate-pulse-glow pointer-events-none" style={{ animationDelay: '0.5s' }} />
                 </div>
                 
                 {/* Status Badge */}
