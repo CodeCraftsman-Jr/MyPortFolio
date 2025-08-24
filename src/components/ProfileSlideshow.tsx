@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
-
-// Import profile photos - using dynamic imports for better compatibility
-const profileImagePaths = [
-  "/src/assets/profile-photo-1.JPG",
-  "/src/assets/profile-photo-2.jpg",
-  "/src/assets/profile-photo-3.jpg",
-  "/src/assets/profile-photo-4.jpg",
-  "/src/assets/profile-photo-5.JPG",
-  "/src/assets/profile-photo-6.jpg"
-];
+import profilePhoto1 from "@/assets/profile-photo-1.jpg";
+import profilePhoto2 from "@/assets/profile-photo-2.jpg";
+import profilePhoto3 from "@/assets/profile-photo-3.jpg";
+import profilePhoto4 from "@/assets/profile-photo-4.jpg";
+import profilePhoto5 from "@/assets/profile-photo-5.jpg";
+import profilePhoto6 from "@/assets/profile-photo-6.jpg";
 
 interface ProfileSlideshowProps {
   className?: string;
@@ -20,7 +16,14 @@ export const ProfileSlideshow = ({ className = "", alt = "Profile" }: ProfileSli
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Using actual profile photos from assets folder
-  const profileImages = profileImagePaths;
+  const profileImages = [
+    profilePhoto1,
+    profilePhoto2,
+    profilePhoto3,
+    profilePhoto4,
+    profilePhoto5,
+    profilePhoto6
+  ];
 
   useEffect(() => {
     // Preload all images

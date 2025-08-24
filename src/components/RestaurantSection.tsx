@@ -170,6 +170,49 @@ export const RestaurantSection = () => {
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Google Maps Location */}
+              <Card className="glass border-border/20">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-primary/10">
+                      <MapPin className="h-6 w-6 text-primary" />
+                    </div>
+                    Find Us Here
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden border border-border/20">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.283786803163!2d79.85658649999999!3d12.0239735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5365007e082633%3A0x6f47ab94b86d09f0!2sVasanth&#39;s%20Kitchen!5e0!3m2!1sen!2sin!4v1756066221999!5m2!1sen!2sin"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen={true}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Vasanth's Kitchen Location"
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <div className="mt-4 text-center">
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Visit us at our restaurant location for the best dining experience
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-2 justify-center">
+                      <Badge variant="outline" className="text-xs">
+                        📍 Pondicherry, India
+                      </Badge>
+                      <Badge variant="outline" className="text-xs">
+                        🚗 Parking Available
+                      </Badge>
+                      <Badge variant="outline" className="text-xs">
+                        🏪 Dine-in & Takeaway
+                      </Badge>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
 
