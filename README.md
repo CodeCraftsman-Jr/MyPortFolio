@@ -1,5 +1,5 @@
 # Welcome to your Lovable project
-<!-- Trigger deployment -->
+<!-- Trigger deployment - Profile photos and Google Maps integration fixed -->
 
 ## Project info
 
