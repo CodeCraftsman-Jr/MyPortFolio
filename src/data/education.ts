@@ -25,14 +25,14 @@ export interface EducationDetail {
 export const educationData: EducationDetail[] = [
   {
     id: "engineering",
-    institution: "Sri Venkateshwaraa College of Engineering and Technology",
+    institution: "Sri Venkateshwaraa College of Engineering and Technology (SVCET)",
     degree: "Bachelor of Engineering",
-    major: "Computer Science",
+    major: "Computer Science and Engineering",
     duration: "2022 - 2026 (Expected)",
-    location: "Ariyur, Pondicherry",
+    location: "Ariyur, Pondicherry, India",
     cgpa: "7.5",
     status: "Current",
-    description: "Pursuing comprehensive education in computer science with focus on software development, algorithms, and modern technologies.",
+    description: "Pursuing comprehensive education in computer science engineering with focus on software development, algorithms, modern technologies, and entrepreneurship. Active in developing real-world projects and building VarSys software company during studies.",
     subjects: [
       "Frontend/Backend Development",
       "Python Programming",
@@ -125,14 +125,14 @@ export const educationData: EducationDetail[] = [
   },
   {
     id: "secondary",
-    institution: "Kendriya Vidyalaya No 2 Pondicherry",
+    institution: "PM Shri Kendriya Vidyalaya No 2 Pondicherry (KV No 2 Pondicherry)",
     degree: "Higher Secondary Education",
-    major: "CBSE Board",
+    major: "Science Stream (PCM with Computer Science)",
     duration: "2019 - 2022",
-    location: "University Campus, Pondicherry",
+    location: "University Campus, Pondicherry, India",
     cgpa: "Class 12th: 66%, Class 10th: 77%",
     status: "Completed",
-    description: "Completed secondary education with strong foundation in mathematics and science, developing analytical thinking and problem-solving skills.",
+    description: "Completed secondary education from prestigious Kendriya Vidyalaya with strong foundation in mathematics, science, and computer applications. Developed analytical thinking, problem-solving skills, and early interest in programming and technology.",
     subjects: [
       "Mathematics",
       "Physics",

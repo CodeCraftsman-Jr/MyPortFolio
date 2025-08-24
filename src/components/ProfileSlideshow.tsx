@@ -1,5 +1,14 @@
 import { useState, useEffect } from "react";
-import profilePhoto from "@/assets/profile-photo.jpg";
+
+// Import profile photos - using dynamic imports for better compatibility
+const profileImagePaths = [
+  "/src/assets/profile-photo-1.JPG",
+  "/src/assets/profile-photo-2.jpg",
+  "/src/assets/profile-photo-3.jpg",
+  "/src/assets/profile-photo-4.jpg",
+  "/src/assets/profile-photo-5.JPG",
+  "/src/assets/profile-photo-6.jpg"
+];
 
 interface ProfileSlideshowProps {
   className?: string;
@@ -10,15 +19,8 @@ export const ProfileSlideshow = ({ className = "", alt = "Profile" }: ProfileSli
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Using optimized sample images - replace these with actual profile photos
-  const profileImages = [
-    profilePhoto, // Using the existing profile photo as the first image
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400&face=1",
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400&face=1",
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400&h=400&face=1",
-    "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400&h=400&face=1",
-    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400&h=400&face=1"
-  ];
+  // Using actual profile photos from assets folder
+  const profileImages = profileImagePaths;
 
   useEffect(() => {
     // Preload all images

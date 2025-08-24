@@ -12,3 +12,15 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://vasanthan.tech/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Block access to sensitive files
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /*.ts$
+Disallow: /*.tsx$

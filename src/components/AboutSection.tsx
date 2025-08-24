@@ -56,9 +56,11 @@ export const AboutSection = () => {
                     Building innovative solutions through code
                   </h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    I'm a Computer Science Engineering student at Sri Venkateshwaraa College 
-                    with a passion for full-stack development. Currently pursuing my Bachelor's 
-                    degree with a CGPA of 7.5, specializing in modern web technologies and innovative solutions.
+                    I'm Vasanthan E (commonly known as Vasanth), a Computer Science Engineering student at
+                    Sri Venkateshwaraa College of Engineering and Technology (SVCET) with a passion for
+                    full-stack development and entrepreneurship. Currently pursuing my Bachelor's degree
+                    with a CGPA of 7.5, I'm the founder of VarSys, a software development company
+                    specializing in computer, Android, iOS, and web applications.
                   </p>
                 </div>
               </div>
@@ -67,16 +69,19 @@ export const AboutSection = () => {
                 <div>
                   <h4 className="font-semibold text-primary mb-2">Education</h4>
                   <p className="text-muted-foreground">
-                    <strong>Sri Venkateshwaraa College of Engineering and Technology</strong><br/>
+                    <strong>Sri Venkateshwaraa College of Engineering and Technology (SVCET)</strong><br/>
                     Bachelor of Engineering in Computer Science (Expected May 2026)<br/>
-                    CGPA: 7.5 | Ariyur, Pondicherry
+                    CGPA: 7.5 | Ariyur, Pondicherry<br/><br/>
+                    <strong>PM Shri Kendriya Vidyalaya No 2 Pondicherry (KV No 2)</strong><br/>
+                    Class 12th: 66% | Class 10th: 77%
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Background</h4>
+                  <h4 className="font-semibold text-primary mb-2">Business Ventures</h4>
                   <p className="text-muted-foreground">
-                    Graduated from Kendriya Vidyalaya with 77% in Class 10th and 66% in Class 12th. 
-                    Passionate about exploring new technologies and creating impactful digital solutions.
+                    <strong>VarSys</strong> - Founder & CEO of software development company<br/>
+                    <strong>Vasanth Kitchen</strong> - Restaurant owner with delivery on Swiggy & Zomato<br/>
+                    <strong>Content Creator</strong> - Managing 3 YouTube channels with diverse content
                   </p>
                 </div>
               </div>

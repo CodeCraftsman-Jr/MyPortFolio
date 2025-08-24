@@ -64,14 +64,15 @@ export const HeroSection = () => {
               
               <div className="animate-fade-in-right" style={{ animationDelay: '0.4s' }}>
                 <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl lg:max-w-none">
-                  Computer Science Engineering student specializing in Frontend/Backend Development. 
-                  Experienced in Python, React, Node.js, and Firebase with a passion for creating innovative solutions.
+                  Full Stack Developer and VarSys Founder from Pondicherry, India. Computer Science Engineering student
+                  specializing in web development, mobile apps, and software solutions. YouTube content creator and
+                  restaurant owner with expertise in Python, React, Node.js, and Firebase.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8 text-sm">
                   <span className="flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-accent" />
-                    Pondicherry, 605013
+                    Pondicherry, India
                   </span>
                   <span className="flex items-center gap-2">
                     <Phone className="h-4 w-4 text-accent" />
