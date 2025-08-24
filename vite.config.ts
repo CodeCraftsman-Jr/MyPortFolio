@@ -20,9 +20,9 @@ export default defineConfig(({ mode }) => ({
     target: 'es2015',
     rollupOptions: {
       output: {
-        // Use .mjs extension for better GitHub Pages compatibility
-        entryFileNames: 'assets/[name]-[hash].mjs',
-        chunkFileNames: 'assets/[name]-[hash].mjs',
+        // Place JS files in root directory to avoid GitHub Pages asset serving issues
+        entryFileNames: '[name]-[hash].js',
+        chunkFileNames: '[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash].[ext]',
         // Ensure proper format for GitHub Pages
         format: 'es',
