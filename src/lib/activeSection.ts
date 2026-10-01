@@ -1,12 +1,13 @@
 import { useSyncExternalStore } from "react";
 
+// Page sections in order. `stage` picks the particle shape behind each one.
 export const sections = [
   { id: "home", label: "Home", stage: 0 },
-  { id: "apps", label: "Apps", stage: 1 },
-  { id: "work", label: "Builds", stage: 2 },
-  { id: "journey", label: "Journey", stage: 3 },
-  { id: "stack", label: "Stack", stage: 3 },
-  { id: "beyond", label: "Off-screen", stage: 0 },
+  { id: "expertise", label: "Expertise", stage: 1 },
+  { id: "products", label: "Products", stage: 2 },
+  { id: "work", label: "Client work", stage: 3 },
+  { id: "plan", label: "Plan a project", stage: 1 },
+  { id: "about", label: "About", stage: 3 },
   { id: "contact", label: "Contact", stage: 4 },
 ] as const;
 

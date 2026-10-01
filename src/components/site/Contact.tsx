@@ -6,12 +6,14 @@ import { Reveal } from "./Reveal";
 // No backend: the form drafts an email in the visitor's own mail app.
 export function Contact() {
   const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
 
   const send = (e: FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Project enquiry from ${name.trim() || "the portfolio"}`);
-    const body = encodeURIComponent(`${message.trim()}\n\n- ${name.trim()}`);
+    const who = [name.trim(), company.trim()].filter(Boolean).join(", ");
+    const subject = encodeURIComponent(`Enquiry from ${who || "the portfolio"}`);
+    const body = encodeURIComponent(`${message.trim()}\n\n${who}`);
     window.location.href = `mailto:${person.email}?subject=${subject}&body=${body}`;
   };
 
@@ -21,16 +23,14 @@ export function Contact() {
         <Reveal>
           <p className="pf-label pf-eyebrow">
             <span className="pf-led" />
-            Taking new work
+            Available for new projects
           </p>
           <h2 id="contact-title" className="pf-contact-title">
-            Let's build
-            <br />
-            <em>the next one.</em>
+            Have a product in mind? <span className="pf-hero-accent">Let's talk it through.</span>
           </h2>
           <p className="pf-lead">
-            A product, an internal tool, or a website that has to actually work. Tell me what it should do; I
-            usually reply within a day.
+            Tell me what the software should do and who will use it. I reply within one working day with questions or
+            a suggested first step.
           </p>
           <p className="mt-6">
             <a className="pf-link pf-mail" href={`mailto:${person.email}`}>
@@ -51,31 +51,45 @@ export function Contact() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
+        <Reveal delay={0.08}>
           <form className="pf-panel pf-form" onSubmit={send}>
-            <div className="pf-field">
-              <label className="pf-label" htmlFor="pf-name">
-                Your name
-              </label>
-              <input
-                id="pf-name"
-                className="pf-input"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                autoComplete="name"
-                required
-              />
+            <div className="pf-form-row">
+              <div className="pf-field">
+                <label className="pf-label" htmlFor="pf-name">
+                  Your name
+                </label>
+                <input
+                  id="pf-name"
+                  className="pf-input"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  autoComplete="name"
+                  required
+                />
+              </div>
+              <div className="pf-field">
+                <label className="pf-label" htmlFor="pf-company">
+                  Company (optional)
+                </label>
+                <input
+                  id="pf-company"
+                  className="pf-input"
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                  autoComplete="organization"
+                />
+              </div>
             </div>
             <div className="pf-field">
               <label className="pf-label" htmlFor="pf-message">
-                What should it do?
+                About the project
               </label>
               <textarea
                 id="pf-message"
                 className="pf-input pf-input-area"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="A booking app for my clinic, with payments..."
+                placeholder="What it should do, who uses it, and any deadline."
                 required
               />
             </div>

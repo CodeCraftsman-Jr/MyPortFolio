@@ -42,7 +42,7 @@ const vertex = /* glsl */ `
     vec3 pos = mix(from, to, local);
 
     // particles burst outward mid-morph, then settle
-    float burst = sin(local * 3.14159) * (0.25 + aSeed * 0.6);
+    float burst = sin(local * 3.14159) * (0.1 + aSeed * 0.25);
     pos += normalize(pos + vec3(0.001)) * burst;
 
     float t = uTime * uMotion;
@@ -72,6 +72,7 @@ const fragment = /* glsl */ `
   uniform vec3 uColorB;
   uniform vec3 uColorC;
   uniform float uAlpha;
+  uniform float uFade;
 
   varying float vSeed;
   varying float vGlow;
@@ -82,7 +83,7 @@ const fragment = /* glsl */ `
     if (disc < 0.01) discard;
     vec3 color = mix(uColorA, uColorB, smoothstep(0.35, 0.9, vSeed));
     color = mix(color, uColorC, clamp(step(0.94, vSeed) + vGlow * 0.6, 0.0, 1.0));
-    gl_FragColor = vec4(color, disc * uAlpha);
+    gl_FragColor = vec4(color, disc * uAlpha * uFade);
   }
 `;
 
@@ -127,13 +128,7 @@ export function ShapeField({ count, theme, calm, wide }: ShapeFieldProps) {
   useEffect(() => () => geometry.dispose(), [geometry]);
 
   // Start where the current stage wants the field, so it never slides across the text on load.
-  useEffect(() => {
-    const g = group.current;
-    if (!g) return;
-    const [x, scale] = wide ? WIDE_PLACE[sceneState.stage] : [0, 0.72];
-    g.position.x = x;
-    g.scale.setScalar(scale);
-  }, [wide]);
+  const start = useMemo(() => (wide ? WIDE_PLACE[sceneState.stage] : [0, 0.72]), [wide]);
 
   const uniforms = useMemo(
     () => ({
@@ -146,6 +141,7 @@ export function ShapeField({ count, theme, calm, wide }: ShapeFieldProps) {
       uColorB: { value: new THREE.Color("#818cf8") },
       uColorC: { value: new THREE.Color("#e2e8f0") },
       uAlpha: { value: 0.8 },
+      uFade: { value: 1 },
     }),
     [],
   );
@@ -159,7 +155,7 @@ export function ShapeField({ count, theme, calm, wide }: ShapeFieldProps) {
     m.uniforms.uColorC.value = readColor("--pf-scene-c", "#e2e8f0");
     // On narrow screens the field sits behind the text, so it stays faint there.
     const light = theme === "light";
-    m.uniforms.uAlpha.value = wide ? (light ? 0.85 : 0.78) : light ? 0.28 : 0.42;
+    m.uniforms.uAlpha.value = wide ? (light ? 0.8 : 0.75) : light ? 0.14 : 0.3;
     m.blending = theme === "light" ? THREE.NormalBlending : THREE.AdditiveBlending;
     m.needsUpdate = true;
     invalidate();
@@ -188,12 +184,16 @@ export function ShapeField({ count, theme, calm, wide }: ShapeFieldProps) {
       m.uniforms.uStage.value = sceneState.stage;
     } else {
       m.uniforms.uTime.value += step;
-      m.uniforms.uStage.value = THREE.MathUtils.damp(m.uniforms.uStage.value, sceneState.stage, 2.2, step);
+      m.uniforms.uStage.value = THREE.MathUtils.damp(m.uniforms.uStage.value, sceneState.stage, 1.8, step);
       m.uniforms.uPointer.value.set(
         (sceneState.pointerX * viewport.width) / 2,
         (sceneState.pointerY * viewport.height) / 2,
       );
     }
+
+    // Full strength behind the hero, a quiet backdrop behind content.
+    const fade = sceneState.stage === 0 ? 1 : 0.5;
+    m.uniforms.uFade.value = calm ? fade : THREE.MathUtils.damp(m.uniforms.uFade.value, fade, 2, step);
 
     const stageNow = Math.round(m.uniforms.uStage.value);
     const [x, scale] = wide ? WIDE_PLACE[stageNow] : [0, 0.72];
@@ -209,7 +209,7 @@ export function ShapeField({ count, theme, calm, wide }: ShapeFieldProps) {
   });
 
   return (
-    <group ref={group}>
+    <group ref={group} position-x={start[0]} scale={start[1]}>
       <points geometry={geometry} frustumCulled={false}>
         <shaderMaterial
           ref={material}

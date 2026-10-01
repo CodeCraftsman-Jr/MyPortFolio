@@ -4,7 +4,8 @@ import { sections, useActiveSection } from "@/lib/activeSection";
 import { useJump } from "@/lib/jumpTo";
 import { setTheme, useTheme } from "@/hooks/useTheme";
 
-const links = sections.filter((s) => s.id !== "home");
+const links = sections.filter((s) => s.id !== "home" && s.id !== "plan");
+const menuLinks = sections.filter((s) => s.id !== "home");
 
 export function TopBar() {
   const active = useActiveSection();
@@ -45,8 +46,10 @@ export function TopBar() {
             go("home");
           }}
         >
-          <span className="pf-brand-mark">V</span>
-          Vasanth
+          <span className="pf-brand-mark">VE</span>
+          <span className="pf-brand-text">
+            Vasanthan E<span className="pf-brand-sub">VarSys</span>
+          </span>
         </a>
 
         <nav className="pf-nav" aria-label="Sections">
@@ -76,14 +79,14 @@ export function TopBar() {
             {theme === "dark" ? <Sun /> : <Moon />}
           </button>
           <a
-            href="#contact"
+            href="#plan"
             className="pf-btn pf-btn-main pf-bar-hire"
             onClick={(e) => {
               e.preventDefault();
-              go("contact");
+              go("plan");
             }}
           >
-            Start a project
+            Plan a project
           </a>
           <button
             type="button"
@@ -101,7 +104,7 @@ export function TopBar() {
       {open && (
         <div id="pf-menu" className="pf-menu">
           <ul className="pf-wrap pf-menu-list">
-            {links.map((s, i) => (
+            {menuLinks.map((s, i) => (
               <li key={s.id}>
                 <button type="button" className="pf-menu-link" onClick={() => go(s.id)}>
                   <span>{s.label}</span>

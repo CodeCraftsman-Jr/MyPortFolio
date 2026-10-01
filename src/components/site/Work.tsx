@@ -4,6 +4,7 @@ import { ArrowUpRight, X } from "lucide-react";
 import { projects, type Project } from "@/data/projects";
 import { Reveal } from "./Reveal";
 import { useTilt } from "./useTilt";
+import { SectionHead } from "./SectionHead";
 
 const kindLabel: Record<Project["category"], string> = {
   web: "Web",
@@ -40,7 +41,7 @@ function WorkCard({ project, onOpen }: { project: Project; onOpen: () => void })
           ))}
         </ul>
         <span className="pf-label pf-work-open">
-          Read the build
+          View case study
           <ArrowUpRight size={14} aria-hidden="true" />
         </span>
       </div>
@@ -54,7 +55,7 @@ function WorkDetail({ project }: { project: Project }) {
       <img className="pf-dialog-media" src={project.images[0] ?? project.image} alt="" width={1200} height={514} />
       <div className="pf-dialog-body">
         <div>
-          <p className="pf-label pf-label-accent">{kindLabel[project.category]} build</p>
+          <p className="pf-label pf-label-accent">{kindLabel[project.category]} project</p>
           <Dialog.Title className="pf-dialog-title">{project.title}</Dialog.Title>
         </div>
         <Dialog.Description className="pf-lead m-0">{project.fullDescription}</Dialog.Description>
@@ -85,13 +86,13 @@ function WorkDetail({ project }: { project: Project }) {
         </div>
 
         <div className="grid gap-3">
-          <p className="pf-label">Hard parts</p>
+          <p className="pf-label">Challenges</p>
           {project.challenges.map((c) => (
             <div key={c.title} className="pf-problem">
               <strong>{c.title}</strong>
               <p>{c.description}</p>
               <p>
-                <span className="pf-label pf-label-accent">Fix </span>
+                <span className="pf-label pf-label-accent">Solution </span>
                 {c.solution}
               </p>
             </div>
@@ -121,20 +122,10 @@ export function Work() {
   return (
     <section id="work" data-section="work" className="pf-section" tabIndex={-1} aria-labelledby="work-title">
       <div className="pf-wrap">
-        <Reveal className="pf-head">
-          <p className="pf-label pf-eyebrow">
-            <span className="pf-eyebrow-tag">Client + personal</span> Earlier builds
-          </p>
-          <h2 id="work-title" className="pf-h2">
-            Before the suite,
-            <br />
-            <span className="pf-h2-soft">there were clients.</span>
-          </h2>
-          <p className="pf-lead">
-            Restaurants, a doctor, a psychology lab, a payroll office. Desktop apps in Python, web apps in React,
-            payments in RazorPay and Stripe. Open any card for the problem, the fix and the timeline.
-          </p>
-        </Reveal>
+        <SectionHead id="work-title" tag="Client work" title="Projects delivered for clients">
+          Websites, booking systems, assessment platforms and desktop tools for restaurants, a doctor, a psychology
+          practice and small businesses. Open a project for the problem, the solution and the timeline.
+        </SectionHead>
 
         <ul className="pf-work-list">
           {projects.map((p, i) => (

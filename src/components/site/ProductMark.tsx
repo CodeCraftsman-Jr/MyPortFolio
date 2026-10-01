@@ -64,6 +64,13 @@ export function ProductMark({ kind }: { kind: MarkKind }) {
           <circle cx="28" cy="30" r="2.6" fill="currentColor" />
         </>
       )}
+      {kind === "plate" && (
+        <>
+          <ellipse cx="28" cy="34" rx="22" ry="8" />
+          <ellipse className="pf-mark-soft" cx="28" cy="33" rx="14" ry="4.5" />
+          <path d="M18 24 q0 -6 4 -10 M28 22 q0 -7 4 -11 M38 24 q0 -6 4 -10" strokeLinecap="round" />
+        </>
+      )}
       {kind === "pages" && (
         <>
           <rect className="pf-mark-soft" x="18" y="8" width="26" height="32" rx="3" />

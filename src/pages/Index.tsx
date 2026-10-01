@@ -3,11 +3,11 @@ import { ReactLenis } from "lenis/react";
 import { TopBar } from "@/components/site/TopBar";
 import { HudGauge } from "@/components/site/HudGauge";
 import { Hero } from "@/components/site/Hero";
-import { Ecosystem } from "@/components/site/Ecosystem";
+import { Expertise } from "@/components/site/Expertise";
+import { Products } from "@/components/site/Products";
 import { Work } from "@/components/site/Work";
-import { Journey } from "@/components/site/Journey";
-import { Stack } from "@/components/site/Stack";
-import { Beyond } from "@/components/site/Beyond";
+import { Planner } from "@/components/site/Planner";
+import { About } from "@/components/site/About";
 import { Contact } from "@/components/site/Contact";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { sections, setActive, type SectionId } from "@/lib/activeSection";
@@ -94,11 +94,11 @@ const Index = () => {
       <div className="pf-page">
         <main id="main">
           <Hero />
-          <Ecosystem />
+          <Expertise />
+          <Products />
           <Work />
-          <Journey />
-          <Stack />
-          <Beyond />
+          <Planner />
+          <About />
           <Contact />
         </main>
         <SiteFooter />
