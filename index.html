@@ -7,13 +7,32 @@
     <!-- Primary SEO Meta Tags -->
     <title>Vasanthan E - Full Stack Developer, VarSys Founder & Content Creator | Pondicherry</title>
     <meta name="title" content="Vasanthan E - Full Stack Developer, VarSys Founder & Content Creator | Pondicherry" />
-    <meta name="description" content="Vasanthan E (Vasanth) - Full Stack Developer from Pondicherry, India. Founder of VarSys software company, YouTube content creator, and owner of Vasanth Kitchen restaurant. Specializing in Python, React, Firebase, and mobile app development." />
+    <meta name="description" content="Vasanthan E (Vasanth) - full stack developer from Pondicherry, India and founder of VarSys: Joint Journey, TraQify, VoltTrack, CookSuite, EV Hub, DocuStore and the VarSys Store. Also runs Vasanth's Kitchen and three YouTube channels." />
     <meta name="keywords" content="Vasanthan E, Vasanth, VarSys, full stack developer, software development, Python developer, React developer, Pondicherry developer, web development, mobile app development, YouTube creator, restaurant owner, Vasanth Kitchen, computer science engineering, SVCET, KV Pondicherry" />
     <meta name="author" content="Vasanthan E" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Theme before first paint, so there is no light/dark flash -->
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("pf-theme"); } catch (e) {}
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    />
 
     <!-- Geographic SEO -->
     <meta name="geo.region" content="IN-PY" />
@@ -26,7 +45,7 @@
     <meta property="og:url" content="https://vasanthan.tech/" />
     <meta property="og:title" content="Vasanthan E - Full Stack Developer, VarSys Founder & Content Creator" />
     <meta property="og:description" content="Full Stack Developer from Pondicherry specializing in software development, content creation, and entrepreneurship. Founder of VarSys and owner of Vasanth Kitchen restaurant." />
-    <meta property="og:image" content="https://vasanthan.tech/src/assets/profile-photo-1.JPG" />
+    <meta property="og:image" content="https://vasanthan.tech/vasanthan-e.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Vasanthan E Portfolio" />
@@ -37,11 +56,12 @@
     <meta property="twitter:url" content="https://vasanthan.tech/" />
     <meta property="twitter:title" content="Vasanthan E - Full Stack Developer & Entrepreneur" />
     <meta property="twitter:description" content="Full Stack Developer, VarSys Founder, YouTube Creator & Restaurant Owner from Pondicherry, India" />
-    <meta property="twitter:image" content="https://vasanthan.tech/src/assets/profile-photo-1.JPG" />
+    <meta property="twitter:image" content="https://vasanthan.tech/vasanthan-e.jpg" />
 
     <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#6366f1" />
-    <meta name="msapplication-TileColor" content="#6366f1" />
+    <meta name="theme-color" content="#0a0f1c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+    <meta name="msapplication-TileColor" content="#0a0f1c" />
     <link rel="canonical" href="https://vasanthan.tech/" />
 
     <!-- Structured Data for Person -->
@@ -52,7 +72,7 @@
       "name": "Vasanthan E",
       "alternateName": "Vasanth",
       "url": "https://vasanthan.tech",
-      "image": "https://vasanthan.tech/src/assets/profile-photo-1.JPG",
+      "image": "https://vasanthan.tech/vasanthan-e.jpg",
       "sameAs": [
         "https://github.com/CodeCraftsman-Jr",
         "https://www.linkedin.com/in/vasanthan-e-cse-5556a2327",
