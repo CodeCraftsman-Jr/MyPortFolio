@@ -1,0 +1,792 @@
+/* Portfolio admin: VarSys app-shell (viewport-locked, pane scrolling).
+   Uses the site's --pf-* tokens so light and dark both work. */
+
+.pf-ad-shell {
+  position: fixed;
+  inset: 0;
+  height: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--pf-bg-deep);
+  color: var(--pf-text);
+  font-size: 0.875rem;
+}
+
+/* ---------------------------------------------------------------- header */
+.pf-ad-header {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 3rem;
+  padding: 0 0.6rem;
+  padding-top: env(safe-area-inset-top);
+  border-bottom: 1px solid var(--pf-line);
+  background: var(--pf-surface-solid);
+}
+
+.pf-ad-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 700;
+  color: var(--pf-strong);
+}
+.pf-ad-brand .pf-brand-mark {
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 0.7rem;
+}
+
+.pf-ad-brand-text {
+  display: none;
+}
+
+.pf-ad-crumb {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--pf-muted);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pf-ad-header-tools {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pf-ad-hide-phone {
+  display: none;
+}
+
+/* ---------------------------------------------------------------- body: sidebar + main */
+.pf-ad-body {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+}
+
+.pf-ad-side {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--pf-line);
+  background: var(--pf-surface-solid);
+  transform: translateX(-100%);
+  transition: transform 200ms ease;
+  overflow-y: auto;
+}
+.pf-ad-side-toggled {
+  transform: none;
+}
+
+.pf-ad-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  border: 0;
+  background: var(--pf-scrim);
+}
+
+.pf-ad-side ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  display: grid;
+  gap: 2px;
+}
+
+.pf-ad-nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0 0.75rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--pf-muted);
+  font: inherit;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+.pf-ad-nav:hover {
+  color: var(--pf-strong);
+}
+.pf-ad-nav-on {
+  background: var(--pf-accent-soft);
+  color: var(--pf-strong);
+  box-shadow: inset 2px 0 0 var(--pf-accent);
+}
+
+.pf-ad-side-foot {
+  margin: auto 0 0;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--pf-line);
+  display: grid;
+  gap: 0.15rem;
+  color: var(--pf-strong);
+  font-weight: 600;
+  word-break: break-all;
+}
+.pf-ad-side-foot span {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--pf-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.pf-ad-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pf-ad-page {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  gap: 0.5rem;
+}
+
+/* ---------------------------------------------------------------- panes */
+.pf-ad-split {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pf-ad-pane {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  display: none;
+  flex-direction: column;
+  border: 1px solid var(--pf-line);
+  border-radius: 0.75rem;
+  background: var(--pf-surface-solid);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.pf-ad-pane-on {
+  display: flex;
+}
+
+.pf-ad-pane-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--pf-line);
+  background: var(--pf-surface-solid);
+}
+
+.pf-ad-pane-title {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--pf-strong);
+}
+
+.pf-ad-head-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.pf-ad-subtabs {
+  flex: none;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--pf-line);
+  border-radius: 0.75rem;
+  background: var(--pf-surface-solid);
+}
+.pf-ad-subtabs button {
+  flex: 1;
+  min-height: 2.5rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--pf-muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pf-ad-subtabs button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.pf-ad-subtabs .pf-ad-subtab-on {
+  background: var(--pf-accent);
+  color: var(--pf-accent-ink);
+}
+
+/* ---------------------------------------------------------------- list pane */
+.pf-ad-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem;
+  display: grid;
+  gap: 2px;
+}
+
+.pf-ad-list-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 0.5rem;
+}
+.pf-ad-list-row-on {
+  background: var(--pf-accent-soft);
+  box-shadow: inset 2px 0 0 var(--pf-accent);
+}
+
+.pf-ad-list-open {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.6rem;
+  border: 0;
+  background: transparent;
+  color: var(--pf-strong);
+  font: inherit;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pf-ad-list-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pf-ad-list-tools {
+  display: flex;
+  flex: none;
+  padding-right: 0.25rem;
+}
+
+.pf-ad-badge {
+  flex: none;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--pf-line-hi);
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pf-warn);
+}
+
+.pf-ad-empty {
+  padding: 1rem;
+  color: var(--pf-dim);
+  text-align: center;
+}
+.pf-ad-empty-big {
+  margin: auto;
+}
+
+/* ---------------------------------------------------------------- form */
+.pf-ad-form {
+  display: grid;
+  gap: 0.9rem;
+  padding: 0.9rem 0.75rem 1.5rem;
+}
+
+.pf-ad-field {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.pf-ad-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pf-muted);
+}
+
+.pf-ad-hint {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--pf-dim);
+}
+
+.pf-ad-intro {
+  padding: 0.75rem 0.75rem 0;
+  max-width: 70ch;
+}
+
+.pf-ad-input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--pf-line-hi);
+  border-radius: 0.55rem;
+  background: var(--pf-bg);
+  color: var(--pf-strong);
+  font: inherit;
+  font-size: 1rem;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.pf-ad-input:focus {
+  outline: none;
+  border-color: var(--pf-accent);
+  box-shadow: 0 0 0 3px var(--pf-accent-soft);
+}
+
+.pf-ad-area {
+  min-height: 6.5rem;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.pf-ad-words {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.pf-ad-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pf-ad-tags:empty {
+  display: none;
+}
+
+.pf-ad-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.15rem 0.2rem 0.15rem 0.6rem;
+  border: 1px solid var(--pf-line-hi);
+  border-radius: 999px;
+  background: var(--pf-accent-soft);
+  color: var(--pf-strong);
+}
+
+.pf-ad-tag-x {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--pf-muted);
+  cursor: pointer;
+}
+.pf-ad-tag-x:hover {
+  color: var(--pf-strong);
+}
+
+.pf-ad-rows {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.pf-ad-row {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  border: 1px solid var(--pf-line);
+  border-radius: 0.6rem;
+  background: var(--pf-bg);
+}
+
+.pf-ad-row-fields {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.pf-ad-row-tools {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: flex-end;
+}
+
+.pf-ad-switch {
+  position: relative;
+  width: 2.75rem;
+  height: 1.6rem;
+  border: 1px solid var(--pf-line-hi);
+  border-radius: 999px;
+  background: var(--pf-bg);
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+.pf-ad-switch-knob {
+  position: absolute;
+  top: 0.15rem;
+  left: 0.15rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 999px;
+  background: var(--pf-muted);
+  transition: transform 150ms ease, background-color 150ms ease;
+}
+.pf-ad-switch-on {
+  background: var(--pf-accent);
+  border-color: var(--pf-accent);
+}
+.pf-ad-switch-on .pf-ad-switch-knob {
+  transform: translateX(1.15rem);
+  background: var(--pf-accent-ink);
+}
+
+/* ---------------------------------------------------------------- buttons, messages */
+.pf-ad-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.25rem;
+  padding: 0 0.8rem;
+  border: 1px solid var(--pf-line-hi);
+  border-radius: 0.5rem;
+  background: var(--pf-surface-solid);
+  color: var(--pf-strong);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+.pf-ad-btn:hover {
+  border-color: var(--pf-accent);
+}
+.pf-ad-btn:disabled,
+.pf-ad-btn-off {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.pf-ad-btn-main {
+  background: var(--pf-accent);
+  border-color: var(--pf-accent);
+  color: var(--pf-accent-ink);
+}
+
+.pf-ad-btn-danger:hover {
+  border-color: var(--pf-warn);
+  color: var(--pf-warn);
+}
+
+.pf-ad-btn-block {
+  width: 100%;
+  min-height: 2.75rem;
+}
+
+.pf-ad-icon {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: none;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--pf-muted);
+  cursor: pointer;
+}
+.pf-ad-icon:hover {
+  color: var(--pf-strong);
+  border-color: var(--pf-line-hi);
+}
+.pf-ad-icon:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.pf-ad-icon-danger:hover {
+  color: var(--pf-warn);
+}
+
+.pf-ad-error,
+.pf-ad-note {
+  margin: 0.6rem 0.75rem 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+}
+.pf-ad-error {
+  border: 1px solid var(--pf-warn);
+  color: var(--pf-strong);
+  background: var(--pf-accent-soft);
+}
+.pf-ad-note {
+  border: 1px solid var(--pf-line-hi);
+  color: var(--pf-text);
+}
+
+/* ---------------------------------------------------------------- site groups, media, keys */
+.pf-ad-single {
+  flex: 1 1 auto;
+}
+
+.pf-ad-group-tabs {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  min-width: 0;
+}
+
+.pf-ad-group-tab {
+  flex: none;
+  min-height: 2.25rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--pf-line);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--pf-muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pf-ad-group-tab-on {
+  border-color: var(--pf-accent-mid);
+  background: var(--pf-accent-soft);
+  color: var(--pf-strong);
+}
+
+.pf-ad-media {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+  gap: 0.5rem;
+}
+
+.pf-ad-media-card {
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.4rem;
+  border: 1px solid var(--pf-line);
+  border-radius: 0.6rem;
+  background: var(--pf-bg);
+}
+.pf-ad-media-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.4rem;
+}
+
+.pf-ad-media-meta {
+  display: grid;
+  min-width: 0;
+}
+
+.pf-ad-media-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--pf-strong);
+  font-weight: 600;
+}
+
+.pf-ad-media-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.25rem;
+}
+
+.pf-ad-key-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding: 0.75rem;
+}
+.pf-ad-key-form .pf-ad-field {
+  flex: 1 1 14rem;
+}
+
+.pf-ad-fresh {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--pf-accent-mid);
+  border-radius: 0.6rem;
+  background: var(--pf-accent-soft);
+  justify-items: start;
+}
+
+.pf-ad-field-wide {
+  padding: 0 0.75rem;
+}
+.pf-ad-form .pf-ad-field-wide {
+  padding: 0;
+}
+
+.pf-ad-code {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.6rem 0.7rem;
+  overflow-x: auto;
+  border: 1px solid var(--pf-line);
+  border-radius: 0.5rem;
+  background: var(--pf-bg);
+  color: var(--pf-strong);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  white-space: pre;
+  word-break: break-all;
+}
+
+.pf-ad-table {
+  margin: 0.75rem;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+.pf-ad-table th,
+.pf-ad-table td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--pf-line);
+  text-align: left;
+}
+.pf-ad-table th {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pf-muted);
+}
+.pf-ad-row-off {
+  color: var(--pf-dim);
+}
+
+/* ---------------------------------------------------------------- sign-in */
+.pf-ad-login {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: var(--pf-bg-deep);
+}
+
+.pf-ad-login-card {
+  width: 100%;
+  max-width: 24rem;
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  border: 1px solid var(--pf-line);
+  border-radius: 1rem;
+  background: var(--pf-surface-solid);
+  box-shadow: var(--pf-shadow);
+}
+
+.pf-ad-login-title {
+  margin: 0.4rem 0 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--pf-strong);
+}
+
+.pf-ad-login-card .pf-ad-error {
+  margin: 0;
+}
+
+.pf-ad-back {
+  justify-self: center;
+  color: var(--pf-muted);
+}
+
+/* ---------------------------------------------------------------- tablet and desktop */
+@media (min-width: 768px) {
+  .pf-ad-brand-text,
+  .pf-ad-hide-phone {
+    display: inline;
+  }
+  .pf-ad-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 1rem;
+  }
+  .pf-ad-field-wide {
+    grid-column: 1 / -1;
+  }
+  .pf-ad-row-fields {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .pf-ad-header {
+    height: 2.625rem;
+  }
+  .pf-ad-side {
+    position: static;
+    transform: none;
+    width: 14rem;
+    flex: none;
+  }
+  .pf-ad-side-toggled {
+    display: none;
+  }
+  .pf-ad-scrim {
+    display: none;
+  }
+  .pf-ad-subtabs {
+    display: none;
+  }
+  .pf-ad-pane {
+    display: flex;
+  }
+  .pf-ad-list-pane {
+    flex: 0 0 18rem;
+  }
+}

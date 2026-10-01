@@ -1,10 +1,12 @@
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Mail, Phone } from "lucide-react";
-import { person, socials } from "@/data/site";
+import { useContent } from "@/content/ContentProvider";
+import { phoneLink } from "@/lib/planScope";
 import { Reveal } from "./Reveal";
 
 // No backend: the form drafts an email in the visitor's own mail app.
 export function Contact() {
+  const { site, socials } = useContent();
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
@@ -14,7 +16,7 @@ export function Contact() {
     const who = [name.trim(), company.trim()].filter(Boolean).join(", ");
     const subject = encodeURIComponent(`Enquiry from ${who || "the portfolio"}`);
     const body = encodeURIComponent(`${message.trim()}\n\n${who}`);
-    window.location.href = `mailto:${person.email}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -22,28 +24,27 @@ export function Contact() {
       <div className="pf-wrap pf-contact">
         <Reveal>
           <p className="pf-label pf-eyebrow">
-            <span className="pf-led" />
-            Available for new projects
+            {site.available && <span className="pf-led" />}
+            {site.available ? "Available for new projects" : "Contact"}
           </p>
           <h2 id="contact-title" className="pf-contact-title">
-            Have a product in mind? <span className="pf-hero-accent">Let's talk it through.</span>
+            {site.contactTitle} {site.contactAccent && <span className="pf-hero-accent">{site.contactAccent}</span>}
           </h2>
-          <p className="pf-lead">
-            Tell me what the software should do and who will use it. I reply within one working day with questions or
-            a suggested first step.
-          </p>
+          <p className="pf-lead">{site.contactText}</p>
           <p className="mt-6">
-            <a className="pf-link pf-mail" href={`mailto:${person.email}`}>
-              {person.email}
+            <a className="pf-link pf-mail" href={`mailto:${site.email}`}>
+              {site.email}
             </a>
           </p>
           <div className="pf-socials">
-            <a className="pf-btn" href={person.phoneLink}>
-              <Phone size={15} aria-hidden="true" />
-              {person.phone}
-            </a>
+            {site.phone && (
+              <a className="pf-btn" href={phoneLink(site.phone)}>
+                <Phone size={15} aria-hidden="true" />
+                {site.phone}
+              </a>
+            )}
             {socials.map((s) => (
-              <a key={s.id} className="pf-btn" href={s.url} target="_blank" rel="noopener noreferrer">
+              <a key={s.url} className="pf-btn" href={s.url} target="_blank" rel="noopener noreferrer">
                 {s.label}
                 <ArrowUpRight className="pf-btn-icon" aria-hidden="true" />
               </a>

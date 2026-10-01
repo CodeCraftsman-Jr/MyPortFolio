@@ -1,0 +1,71 @@
+name: Portfolio API
+
+on:
+  push:
+    branches: [main]
+    paths: ["server/**", "shared/**", ".github/workflows/api.yml"]
+  pull_request:
+    paths: ["server/**", "shared/**"]
+  workflow_dispatch:
+
+env:
+  API_IMAGE: ghcr.io/codecraftsman-jr/portfolio-api
+
+jobs:
+  api:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+
+      - name: Install API dependencies
+        working-directory: server
+        run: npm ci
+
+      # shared/ imports zod; like the image, resolve it from a node_modules above both folders.
+      - name: Type check
+        run: |
+          ln -s server/node_modules node_modules
+          npm --prefix server run typecheck
+
+      - name: Tests (embedded Postgres, real migration and RLS)
+        working-directory: server
+        run: npm test
+
+      - uses: docker/setup-buildx-action@v3
+        if: github.event_name != 'pull_request'
+
+      - name: Login GHCR
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push image
+        if: github.event_name != 'pull_request'
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: server/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ env.API_IMAGE }}:latest
+
+      # Set repository variable COOLIFY_API_UUID and secret COOLIFY_TOKEN once the Coolify app exists.
+      - name: Deploy (Coolify)
+        if: github.event_name != 'pull_request' && vars.COOLIFY_API_UUID != ''
+        run: |
+          curl --fail --request POST "https://coolify.varsys.co.in/api/v1/deploy?uuid=${{ vars.COOLIFY_API_UUID }}&force=false" \
+            --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"

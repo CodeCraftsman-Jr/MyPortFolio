@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
-import { person } from "@/data/site";
-import { products } from "@/data/ecosystem";
-import { projects } from "@/data/projects";
+import { useContent } from "@/content/ContentProvider";
 import { useCalmMotion } from "@/hooks/useMediaQuery";
 import { useJump } from "@/lib/jumpTo";
 
 const two = (n: number) => String(n).padStart(2, "0");
 
 export function Hero() {
+  const { site, products, projects } = useContent();
   const jump = useJump();
   const calm = useCalmMotion();
 
@@ -33,27 +32,31 @@ export function Hero() {
       <div className="pf-wrap">
         <div className="pf-hero-inner">
           <motion.p className="pf-label pf-eyebrow" {...rise(0.05)}>
-            <span className="pf-led" />
-            <span>Taking new projects</span>
-            <span className="pf-eyebrow-sep" aria-hidden="true" />
+            {site.available && (
+              <>
+                <span className="pf-led" />
+                <span>{site.availableText || "Taking new projects"}</span>
+                <span className="pf-eyebrow-sep" aria-hidden="true" />
+              </>
+            )}
             <span className="pf-eyebrow-place">
               <MapPin size={12} aria-hidden="true" />
-              {person.place}
+              {site.place}
             </span>
           </motion.p>
 
           <motion.div {...rise(0.12)}>
-            <p className="pf-hero-name">{person.name}</p>
+            <p className="pf-hero-name">{site.name}</p>
             <h1 id="pf-hero-title" className="pf-hero-title">
-              I build and run the software <span className="pf-hero-accent">businesses depend on.</span>
+              {site.heroTitle} {site.heroAccent && <span className="pf-hero-accent">{site.heroAccent}</span>}
             </h1>
           </motion.div>
 
-          <motion.p className="pf-lead" {...rise(0.22)}>
-            Full stack engineer and founder of VarSys. I take products from the first conversation to a deployed,
-            maintained system: interface, API, database, mobile builds and the servers they run on. Eight of them are
-            live today.
-          </motion.p>
+          {site.heroLead && (
+            <motion.p className="pf-lead" {...rise(0.22)}>
+              {site.heroLead}
+            </motion.p>
+          )}
 
           <motion.div className="pf-hero-cta" {...rise(0.3)}>
             <a

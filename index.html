@@ -15,6 +15,19 @@
     <meta name="revisit-after" content="7 days" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
+    <!-- Deep link restored after the GitHub Pages 404 redirect (see public/404.html) -->
+    <script>
+      (function () {
+        try {
+          var to = sessionStorage.getItem("pf-redirect");
+          if (to) {
+            sessionStorage.removeItem("pf-redirect");
+            if (to !== "/") history.replaceState(null, "", to);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Theme before first paint, so there is no light/dark flash -->
     <script>
       (function () {

@@ -1,35 +1,37 @@
 import { useMemo, useState } from "react";
 import { ArrowUpRight, Check, Copy, Mail } from "lucide-react";
-import { audiences, getScope, needs } from "@/data/planner";
-import { process, person } from "@/data/site";
-import { products } from "@/data/ecosystem";
+import type { Product } from "@shared/portfolio";
+import { useContent } from "@/content/ContentProvider";
+import { audiences, getScope } from "@/lib/planScope";
 import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
 
-const byId = new Map(products.map((p) => [p.id, p]));
 const unique = <T,>(list: T[]) => [...new Set(list)];
 
 // Interactive brief builder: the visitor picks what they need and gets a
 // plain summary of the approach, which can be sent or copied as a brief.
 export function Planner() {
+  const { site, needs, process, products } = useContent();
   const [picked, setPicked] = useState<string[]>(["webapp", "admin"]);
+  const head = site.sections.plan;
   const [audience, setAudience] = useState("customers");
   const [note, setNote] = useState("");
   const [copied, setCopied] = useState(false);
 
   const plan = useMemo(() => {
-    const chosen = needs.filter((n) => picked.includes(n.id));
+    const chosen = needs.filter((n) => picked.includes(n.slug));
+    const bySlug = new Map(products.map((p) => [p.slug, p]));
     return {
       chosen,
       scope: getScope(chosen.reduce((sum, n) => sum + n.weight, 0)),
       stack: unique(chosen.flatMap((n) => n.stack)),
       deliver: unique(chosen.flatMap((n) => n.deliver)),
       proof: unique(chosen.flatMap((n) => n.proof))
-        .map((id) => byId.get(id))
-        .filter((p) => p !== undefined)
+        .map((slug) => bySlug.get(slug))
+        .filter((p): p is Product => p !== undefined)
         .slice(0, 4),
     };
-  }, [picked]);
+  }, [picked, needs, products]);
 
   const toggle = (id: string) => {
     setCopied(false);
@@ -51,7 +53,7 @@ export function Planner() {
     .filter((line, i, all) => line !== "" || all[i - 1] !== "")
     .join("\n");
 
-  const mailto = `mailto:${person.email}?subject=${encodeURIComponent("Project brief from the portfolio")}&body=${encodeURIComponent(brief)}`;
+  const mailto = `mailto:${site.email}?subject=${encodeURIComponent("Project brief from the portfolio")}&body=${encodeURIComponent(brief)}`;
 
   const copyBrief = async () => {
     try {
@@ -67,15 +69,14 @@ export function Planner() {
   return (
     <section id="plan" data-section="plan" className="pf-section" tabIndex={-1} aria-labelledby="plan-title">
       <div className="pf-wrap">
-        <SectionHead id="plan-title" tag="Plan a project" title="Shape your project in a minute">
-          Choose what you need. The summary on the right shows how I would approach it and which live products already
-          do something similar. Send it as a brief when it looks right.
+        <SectionHead id="plan-title" tag={head.tag} title={head.title}>
+          {head.lead}
         </SectionHead>
 
         <Reveal>
           <ol className="pf-steps">
             {process.map((step, i) => (
-              <li key={step.id} className="pf-step">
+              <li key={step.title} className="pf-step">
                 <span className="pf-step-num">{String(i + 1).padStart(2, "0")}</span>
                 <span className="pf-step-title">{step.title}</span>
                 <span className="pf-step-text">{step.text}</span>
@@ -90,14 +91,14 @@ export function Planner() {
               <legend className="pf-label">What do you need?</legend>
               <div className="pf-needs">
                 {needs.map((n) => {
-                  const on = picked.includes(n.id);
+                  const on = picked.includes(n.slug);
                   return (
                     <button
-                      key={n.id}
+                      key={n.slug}
                       type="button"
                       className={`pf-need ${on ? "pf-need-on" : ""}`}
                       aria-pressed={on}
-                      onClick={() => toggle(n.id)}
+                      onClick={() => toggle(n.slug)}
                     >
                       <span className="pf-need-box" aria-hidden="true">
                         {on && <Check size={13} />}
@@ -191,7 +192,7 @@ export function Planner() {
                   <p className="pf-label">Similar live work</p>
                   <ul className="pf-plan-proof">
                     {plan.proof.map((p) => (
-                      <li key={p.id}>
+                      <li key={p.slug}>
                         <a className="pf-link" href={p.url} target="_blank" rel="noopener noreferrer">
                           {p.name}
                           <ArrowUpRight size={13} aria-hidden="true" className="inline align-baseline" />

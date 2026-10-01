@@ -1,7 +1,8 @@
 import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ArrowUpRight, X } from "lucide-react";
-import { projects, type Project } from "@/data/projects";
+import type { Project } from "@shared/portfolio";
+import { useContent } from "@/content/ContentProvider";
 import { Reveal } from "./Reveal";
 import { useTilt } from "./useTilt";
 import { SectionHead } from "./SectionHead";
@@ -52,7 +53,7 @@ function WorkCard({ project, onOpen }: { project: Project; onOpen: () => void })
 function WorkDetail({ project }: { project: Project }) {
   return (
     <>
-      <img className="pf-dialog-media" src={project.images[0] ?? project.image} alt="" width={1200} height={514} />
+      <img className="pf-dialog-media" src={project.image} alt="" width={1200} height={514} />
       <div className="pf-dialog-body">
         <div>
           <p className="pf-label pf-label-accent">{kindLabel[project.category]} project</p>
@@ -116,21 +117,22 @@ function WorkDetail({ project }: { project: Project }) {
 }
 
 export function Work() {
+  const { site, projects } = useContent();
+  const head = site.sections.work;
   const [openId, setOpenId] = useState<string | null>(null);
-  const open = projects.find((p) => p.id === openId) ?? null;
+  const open = projects.find((p) => p.slug === openId) ?? null;
 
   return (
     <section id="work" data-section="work" className="pf-section" tabIndex={-1} aria-labelledby="work-title">
       <div className="pf-wrap">
-        <SectionHead id="work-title" tag="Client work" title="Projects delivered for clients">
-          Websites, booking systems, assessment platforms and desktop tools for restaurants, a doctor, a psychology
-          practice and small businesses. Open a project for the problem, the solution and the timeline.
+        <SectionHead id="work-title" tag={head.tag} title={head.title}>
+          {head.lead}
         </SectionHead>
 
         <ul className="pf-work-list">
           {projects.map((p, i) => (
-            <Reveal as="li" key={p.id} delay={(i % 3) * 0.06}>
-              <WorkCard project={p} onOpen={() => setOpenId(p.id)} />
+            <Reveal as="li" key={p.slug} delay={(i % 3) * 0.06}>
+              <WorkCard project={p} onOpen={() => setOpenId(p.slug)} />
             </Reveal>
           ))}
         </ul>
