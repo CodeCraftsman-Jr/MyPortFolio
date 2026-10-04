@@ -1,0 +1,35 @@
+{
+  "name": "portfolio-api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Portfolio content API, admin backend and MCP endpoint: Postgres (RLS) + SeaweedFS + Better Auth",
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=.env src/index.ts",
+    "start": "tsx src/index.ts",
+    "migrate": "tsx --env-file-if-exists=.env scripts/migrate.ts",
+    "seed": "tsx --env-file-if-exists=.env scripts/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "dev:local": "tsx scripts/dev-local.ts"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1141.0",
+    "@hono/node-server": "^1.19.17",
+    "@modelcontextprotocol/sdk": "^1.30.1",
+    "hono": "^4.13.9",
+    "postgres": "^3.4.9",
+    "tsx": "^4.23.15",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@electric-sql/pglite-socket": "^0.2.11",
+    "@types/node": "^22.20.4",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
+  }
+}

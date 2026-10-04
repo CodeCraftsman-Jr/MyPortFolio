@@ -1,4 +1,6 @@
-import type { ProductMark as MarkKind } from "@/data/ecosystem";
+import type { Product } from "@shared/portfolio";
+
+type MarkKind = Product["mark"];
 
 // One small glyph per product, each drawn from that product's own landing page.
 export function ProductMark({ kind }: { kind: MarkKind }) {
