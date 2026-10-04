@@ -1,6 +1,7 @@
 # Portfolio API. Build from the repo root so shared/ is included:
 #   docker build -f server/Dockerfile -t ghcr.io/codecraftsman-jr/portfolio-api:latest .
 FROM node:22-alpine
+LABEL org.opencontainers.image.source="https://github.com/VarSys-Org/MyPortFolio"
 WORKDIR /app
 
 # Server dependencies live at /app/node_modules so both server/ and shared/ resolve them.

@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  API_IMAGE: ghcr.io/codecraftsman-jr/portfolio-api
+  API_IMAGE: ghcr.io/varsys-org/portfolio-api
 
 jobs:
   api:
