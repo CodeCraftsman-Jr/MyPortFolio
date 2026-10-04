@@ -1,37 +1,34 @@
-import portrait from "@/assets/profile-photo-1.JPG";
-import { journey, person, stackGroups } from "@/data/site";
+import { useContent } from "@/content/ContentProvider";
 import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
 
 export function About() {
+  const { site, journey, stack } = useContent();
+  const head = site.sections.about;
   return (
     <section id="about" data-section="about" className="pf-section" tabIndex={-1} aria-labelledby="about-title">
       <div className="pf-wrap">
-        <SectionHead id="about-title" tag="About" title="Engineer first, founder by necessity" />
+        <SectionHead id="about-title" tag={head.tag} title={site.aboutTitle || head.title} />
 
         <div className="pf-about">
           <Reveal className="pf-about-side">
             <figure className="pf-panel pf-portrait m-0">
-              <img src={portrait} alt="Portrait of Vasanthan E" width={480} height={600} loading="lazy" decoding="async" />
+              <img src={site.portraitUrl || "/vasanthan-e.jpg"} alt={`Portrait of ${site.name}`} width={480} height={600} loading="lazy" decoding="async" />
               <figcaption className="pf-portrait-cap">
-                <span className="pf-portrait-name">{person.name}</span>
-                <span className="pf-label">{person.role}</span>
+                <span className="pf-portrait-name">{site.name}</span>
+                <span className="pf-label">{site.role}</span>
               </figcaption>
             </figure>
           </Reveal>
 
           <div className="pf-about-main">
             <Reveal>
-              <p className="pf-lead m-0">
-                I started VarSys to solve problems I had at home and in my own restaurant, and kept building until the
-                tools were good enough for other people. Today I work with clients the same way: understand the real
-                workflow, ship a usable first version early, and stay on to run it.
-              </p>
+              <p className="pf-lead m-0">{site.aboutText}</p>
             </Reveal>
 
             <ol className="pf-line-list">
               {journey.map((stop, i) => (
-                <Reveal as="li" key={stop.id} delay={i * 0.04} className={`pf-stop ${i === 0 ? "pf-stop-now" : ""}`}>
+                <Reveal as="li" key={`${stop.when}-${stop.title}`} delay={i * 0.04} className={`pf-stop ${i === 0 ? "pf-stop-now" : ""}`}>
                   <div className="pf-stop-head">
                     <h3 className="pf-stop-title">{stop.title}</h3>
                     <span className="pf-label">{stop.when}</span>
@@ -43,8 +40,8 @@ export function About() {
             </ol>
 
             <Reveal className="pf-stack">
-              {stackGroups.map((g) => (
-                <div key={g.id} className="pf-stack-col">
+              {stack.map((g) => (
+                <div key={g.label} className="pf-stack-col">
                   <h3 className="pf-label pf-label-accent m-0">{g.label}</h3>
                   <ul className="pf-stack-items">
                     {g.items.map((item) => (

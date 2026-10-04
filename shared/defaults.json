@@ -1,0 +1,1001 @@
+{
+  "site": {
+    "name": "Vasanthan E",
+    "role": "Full stack engineer and founder of VarSys",
+    "email": "dev.vasathan.tech@gmail.com",
+    "phone": "+91 94424 34269",
+    "place": "Pondicherry, India",
+    "coords": "11.94 N  79.81 E",
+    "available": true,
+    "availableText": "Taking new projects",
+    "heroTitle": "I build and run the software",
+    "heroAccent": "businesses depend on.",
+    "heroLead": "Full stack engineer and founder of VarSys. I take products from the first conversation to a deployed, maintained system: interface, API, database, mobile builds and the servers they run on. Eight of them are live today.",
+    "aboutTitle": "Engineer first, founder by necessity",
+    "aboutText": "I started VarSys to solve problems I had at home and in my own restaurant, and kept building until the tools were good enough for other people. Today I work with clients the same way: understand the real workflow, ship a usable first version early, and stay on to run it.",
+    "portraitUrl": "/vasanthan-e.jpg",
+    "contactTitle": "Have a product in mind?",
+    "contactAccent": "Let's talk it through.",
+    "contactText": "Tell me what the software should do and who will use it. I reply within one working day with questions or a suggested first step.",
+    "sections": {
+      "expertise": {
+        "tag": "Expertise",
+        "title": "What I can build for you",
+        "lead": "Five areas I work in every day. Pick one to see how I approach it and the live products where it already runs."
+      },
+      "products": {
+        "tag": "Live products",
+        "title": "Eight products in production",
+        "lead": "Built, deployed and maintained by me under VarSys. Each card checks its site from your browser right now, so you can open any of them and use the real thing."
+      },
+      "work": {
+        "tag": "Client work",
+        "title": "Projects delivered for clients",
+        "lead": "Websites, booking systems, assessment platforms and desktop tools for restaurants, a doctor, a psychology practice and small businesses. Open a project for the problem, the solution and the timeline."
+      },
+      "plan": {
+        "tag": "Plan a project",
+        "title": "Shape your project in a minute",
+        "lead": "Choose what you need. The summary on the right shows how I would approach it and which live products already do something similar. Send it as a brief when it looks right."
+      },
+      "about": {
+        "tag": "About",
+        "title": "Engineer first, founder by necessity",
+        "lead": ""
+      },
+      "contact": {
+        "tag": "Contact",
+        "title": "",
+        "lead": ""
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "store",
+      "name": "VarSys Store",
+      "line": "Every VarSys app, in one place.",
+      "about": "The release portal for the whole suite: Android and Windows downloads, always the latest build, with notes, sizes and dates for every release.",
+      "points": [
+        "Android + Windows builds",
+        "Release notes per version",
+        "One install point"
+      ],
+      "url": "https://store.varsys.co.in",
+      "host": "store.varsys.co.in",
+      "mark": "orbit",
+      "tone": "store",
+      "kind": "Distribution"
+    },
+    {
+      "slug": "joint-journey",
+      "name": "Joint Journey",
+      "line": "Two wallets. One book.",
+      "about": "One money book for a household: shared expenses and income per person, budgets, receipts, vehicles, loans, statement import and trips.",
+      "points": [
+        "Per-person shared ledger",
+        "Three access roles",
+        "Web, Android, Windows"
+      ],
+      "url": "https://jointjourney.varsys.co.in",
+      "host": "jointjourney.varsys.co.in",
+      "mark": "slices",
+      "tone": "jj",
+      "kind": "Household finance"
+    },
+    {
+      "slug": "traqify",
+      "name": "TraQify",
+      "line": "Log the day. Read the year.",
+      "about": "Money, health and routine in one tracker: investments and loans, calorie goals and workouts, habit streaks, and a Focus Hub with Pomodoro.",
+      "points": [
+        "Investments + statement import",
+        "Habits and streaks",
+        "Google Tasks + GitHub"
+      ],
+      "url": "https://traquify.varsys.co.in/welcome",
+      "host": "traquify.varsys.co.in",
+      "mark": "dial",
+      "tone": "traq",
+      "kind": "Personal dashboard"
+    },
+    {
+      "slug": "volttrack",
+      "name": "VoltTrack",
+      "line": "Know every unit before the bill does.",
+      "about": "Every electricity meter in one place. Reads bill PDFs automatically, charts usage, handles meter resets and prices by tariff slab.",
+      "points": [
+        "Bill PDF reading",
+        "Tariff slab pricing",
+        "Web, Android, Windows"
+      ],
+      "url": "https://volttrack.varsys.co.in",
+      "host": "volttrack.varsys.co.in",
+      "mark": "lcd",
+      "tone": "volt",
+      "kind": "Energy tracking"
+    },
+    {
+      "slug": "cooksuite",
+      "name": "CookSuite",
+      "line": "Know what every plate costs.",
+      "about": "Kitchen costing and operations: stock, recipes, gas and power costs, sales and delivery-app payouts. Built from running a real kitchen.",
+      "points": [
+        "Recipe + plate costing",
+        "Gas and power per dish",
+        "Delivery payouts"
+      ],
+      "url": "https://cooksuite.varsys.co.in",
+      "host": "cooksuite.varsys.co.in",
+      "mark": "iso",
+      "tone": "cook",
+      "kind": "Restaurant operations"
+    },
+    {
+      "slug": "ev-hub",
+      "name": "EV Hub",
+      "line": "Ride in. Ride on.",
+      "about": "Service platform for electric scooters and motorcycles: compare workshop prices, book a service, look up error codes and check battery health.",
+      "points": [
+        "Workshop booking",
+        "Error code lookup",
+        "Parts store + admin app"
+      ],
+      "url": "https://customer.evhub.varsys.co.in",
+      "host": "customer.evhub.varsys.co.in",
+      "mark": "gauge",
+      "tone": "ev",
+      "kind": "Service marketplace"
+    },
+    {
+      "slug": "docustore",
+      "name": "DocuStore",
+      "line": "Files, kept by team.",
+      "about": "Cloud file storage for teams. Team membership decides access, enforced in the database with PostgreSQL row-level security.",
+      "points": [
+        "Team-scoped access",
+        "Upload and preview",
+        "Row-level security"
+      ],
+      "url": "https://docustore.varsys.co.in",
+      "host": "docustore.varsys.co.in",
+      "mark": "pages",
+      "tone": "docu",
+      "kind": "Cloud storage"
+    },
+    {
+      "slug": "kitchen",
+      "name": "Vasanth's Kitchen",
+      "line": "Home-style South Indian breakfast, Kalapet.",
+      "about": "The website of my own restaurant, with menu, offers and orders managed from its own admin. The kitchen behind it runs on CookSuite.",
+      "points": [
+        "Menu + offers admin",
+        "Swiggy + Zomato",
+        "Runs on CookSuite"
+      ],
+      "url": "https://vasanthskitchen.varsys.co.in",
+      "host": "vasanthskitchen.varsys.co.in",
+      "mark": "plate",
+      "tone": "kitchen",
+      "kind": "Restaurant website"
+    }
+  ],
+  "expertise": [
+    {
+      "slug": "saas",
+      "title": "Multi-tenant SaaS",
+      "short": "Teams, roles and data isolation done in the database.",
+      "detail": "Team-scoped products where one customer can never see another's data. Access rules live in PostgreSQL row-level security, not only in the UI, and sessions come from Better Auth with role-based permissions.",
+      "skills": [
+        "PostgreSQL RLS",
+        "Better Auth",
+        "Role-based access",
+        "Node.js APIs"
+      ],
+      "proof": [
+        "docustore",
+        "joint-journey",
+        "cooksuite"
+      ]
+    },
+    {
+      "slug": "apps",
+      "title": "Web + mobile + desktop",
+      "short": "One codebase shipped to the browser, Android and Windows.",
+      "detail": "React front ends packaged for Android with Capacitor and for Windows, with versioned releases published through my own store. Clients get one product on every device without three separate builds to maintain.",
+      "skills": [
+        "React + TypeScript",
+        "Capacitor Android",
+        "Windows builds",
+        "Release pipeline"
+      ],
+      "proof": [
+        "store",
+        "joint-journey",
+        "volttrack"
+      ]
+    },
+    {
+      "slug": "data",
+      "title": "Data products + dashboards",
+      "short": "Turning statements, bills and logs into decisions.",
+      "detail": "Importers for bank statements and electricity bill PDFs, tariff and costing engines, and dashboards that answer one question each. Charts are built for the data, not dropped in from a template.",
+      "skills": [
+        "PDF + statement parsing",
+        "Costing logic",
+        "Custom charts",
+        "three.js visuals"
+      ],
+      "proof": [
+        "traqify",
+        "volttrack",
+        "cooksuite"
+      ]
+    },
+    {
+      "slug": "commerce",
+      "title": "Bookings + commerce",
+      "short": "Customer sites with ordering, booking and admin.",
+      "detail": "Public sites paired with an admin app: service booking, parts catalogues, menus and offers, and payment integrations with RazorPay and Stripe for client work.",
+      "skills": [
+        "Booking flows",
+        "Admin panels",
+        "RazorPay / Stripe",
+        "SEO"
+      ],
+      "proof": [
+        "ev-hub",
+        "kitchen"
+      ]
+    },
+    {
+      "slug": "infra",
+      "title": "Self-hosted infrastructure",
+      "short": "I deploy and run what I build.",
+      "detail": "Every VarSys product runs on a VPS I operate: Docker containers deployed through Coolify, a private Headscale VPN for database access, secrets in OpenBao, and production PostgreSQL with least-privilege roles.",
+      "skills": [
+        "Docker + Coolify",
+        "Linux VPS",
+        "Headscale VPN",
+        "OpenBao secrets"
+      ],
+      "proof": [
+        "store",
+        "docustore",
+        "ev-hub"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "finance-management-app",
+      "title": "Personal Finance & Production Management App",
+      "shortDescription": "Python-based dashboard with income/expense tracking, visual analytics, goal-based budgeting, attendance tracking and financial insights.",
+      "fullDescription": "A comprehensive Python-based financial management application that combines personal finance tracking with production management capabilities. The application features real-time data visualization, automated reporting, and integration with multiple APIs for enhanced functionality. Built with a focus on user experience and data accuracy, it serves both individual users and small businesses.",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
+      "tags": [
+        "Python",
+        "Google Tasks API",
+        "Zerodha API",
+        "Data Analytics"
+      ],
+      "features": [
+        "Income and expense tracking with categorization",
+        "Visual analytics with interactive charts",
+        "Goal-based budgeting system",
+        "Attendance tracking for productivity",
+        "Real-time stock market integration",
+        "Automated financial reports",
+        "Data export capabilities"
+      ],
+      "technologies": [
+        {
+          "name": "Python",
+          "description": "Core application logic and data processing",
+          "category": "backend"
+        },
+        {
+          "name": "Tkinter",
+          "description": "GUI framework for desktop interface",
+          "category": "frontend"
+        },
+        {
+          "name": "Google Tasks API",
+          "description": "Task management and productivity tracking",
+          "category": "api"
+        },
+        {
+          "name": "Zerodha API",
+          "description": "Real-time stock market data integration",
+          "category": "api"
+        },
+        {
+          "name": "Pandas",
+          "description": "Data analysis and manipulation",
+          "category": "tools"
+        },
+        {
+          "name": "Matplotlib",
+          "description": "Data visualization and charting",
+          "category": "tools"
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Real-time Data Synchronization",
+          "description": "Managing real-time stock data updates while maintaining application performance",
+          "solution": "Implemented asynchronous data fetching with caching mechanisms and optimized update intervals"
+        },
+        {
+          "title": "Complex Financial Calculations",
+          "description": "Accurate calculation of profits, losses, and financial projections",
+          "solution": "Developed robust calculation engine with error handling and validation"
+        }
+      ],
+      "timeline": [
+        {
+          "phase": "Planning & Design",
+          "duration": "2 weeks",
+          "description": "Requirements gathering and UI/UX design"
+        },
+        {
+          "phase": "Core Development",
+          "duration": "6 weeks",
+          "description": "Implementation of core features and database design"
+        },
+        {
+          "phase": "API Integration",
+          "duration": "3 weeks",
+          "description": "Integration with Google Tasks and Zerodha APIs"
+        },
+        {
+          "phase": "Testing & Optimization",
+          "duration": "2 weeks",
+          "description": "Performance optimization and bug fixes"
+        }
+      ],
+      "liveUrl": "",
+      "category": "desktop"
+    },
+    {
+      "slug": "sales-inventory-system",
+      "title": "Sales & Inventory Management System",
+      "shortDescription": "Python-based system with daily/monthly tracking, low-stock alerts, and profit/loss analysis per item.",
+      "fullDescription": "A comprehensive inventory and sales management system designed for small to medium businesses. Features advanced analytics, predictive modeling for stock management, and real-time reporting capabilities. The system integrates with Firebase for cloud storage and real-time synchronization across multiple devices.",
+      "image": "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&q=80&w=800",
+      "tags": [
+        "Python",
+        "Firebase",
+        "Data Forecasting",
+        "Real-time Database"
+      ],
+      "features": [
+        "Daily and monthly sales tracking",
+        "Low-stock alerts and notifications",
+        "Profit/loss analysis per item",
+        "Growth prediction algorithms",
+        "Real-time inventory updates",
+        "Multi-location support"
+      ],
+      "technologies": [
+        {
+          "name": "Python",
+          "description": "Backend logic and data processing",
+          "category": "backend"
+        },
+        {
+          "name": "Firebase",
+          "description": "Real-time database and cloud storage",
+          "category": "database"
+        },
+        {
+          "name": "Scikit-learn",
+          "description": "Machine learning for demand forecasting",
+          "category": "tools"
+        },
+        {
+          "name": "Tkinter",
+          "description": "Desktop application interface",
+          "category": "frontend"
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Demand Forecasting Accuracy",
+          "description": "Predicting inventory needs based on historical sales data",
+          "solution": "Implemented machine learning algorithms with seasonal adjustment factors"
+        }
+      ],
+      "timeline": [
+        {
+          "phase": "System Design",
+          "duration": "1 week",
+          "description": "Database schema and architecture planning"
+        },
+        {
+          "phase": "Core Features",
+          "duration": "4 weeks",
+          "description": "Inventory management and sales tracking"
+        },
+        {
+          "phase": "Analytics Engine",
+          "duration": "3 weeks",
+          "description": "Forecasting and reporting features"
+        },
+        {
+          "phase": "Testing",
+          "duration": "1 week",
+          "description": "System testing and optimization"
+        }
+      ],
+      "liveUrl": "",
+      "category": "desktop"
+    },
+    {
+      "slug": "facial-recognition-attendance",
+      "title": "Facial Recognition Attendance System",
+      "shortDescription": "Python application using OpenCV for facial recognition-based attendance tracking with automated payroll generation.",
+      "fullDescription": "An advanced attendance management system that uses facial recognition technology to automatically track employee attendance. The system includes automated payroll calculation, working hours tracking, and comprehensive reporting features. Built with OpenCV for computer vision and includes anti-spoofing measures for security.",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
+      "tags": [
+        "Python",
+        "OpenCV",
+        "Facial Recognition",
+        "Payroll Automation"
+      ],
+      "features": [
+        "Real-time facial recognition",
+        "Automated attendance logging",
+        "Payroll calculation with overtime",
+        "Working hours tracking",
+        "Employee management system",
+        "Comprehensive reporting",
+        "Anti-spoofing security measures"
+      ],
+      "technologies": [
+        {
+          "name": "Python",
+          "description": "Core application development",
+          "category": "backend"
+        },
+        {
+          "name": "OpenCV",
+          "description": "Computer vision and facial recognition",
+          "category": "tools"
+        },
+        {
+          "name": "dlib",
+          "description": "Face detection and recognition algorithms",
+          "category": "tools"
+        },
+        {
+          "name": "SQLite",
+          "description": "Local database for attendance records",
+          "category": "database"
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Facial Recognition Accuracy",
+          "description": "Ensuring high accuracy in different lighting conditions and angles",
+          "solution": "Implemented multiple face detection models and preprocessing techniques"
+        },
+        {
+          "title": "Anti-Spoofing Security",
+          "description": "Preventing attendance fraud using photos or videos",
+          "solution": "Added liveness detection and multiple verification steps"
+        }
+      ],
+      "timeline": [
+        {
+          "phase": "Research & Planning",
+          "duration": "1 week",
+          "description": "Facial recognition technology research"
+        },
+        {
+          "phase": "Core Development",
+          "duration": "5 weeks",
+          "description": "Face detection and recognition implementation"
+        },
+        {
+          "phase": "Payroll Integration",
+          "duration": "2 weeks",
+          "description": "Automated payroll calculation system"
+        },
+        {
+          "phase": "Security & Testing",
+          "duration": "2 weeks",
+          "description": "Anti-spoofing measures and system testing"
+        }
+      ],
+      "liveUrl": "",
+      "category": "ai"
+    },
+    {
+      "slug": "restaurant-website",
+      "title": "Restaurant Website Template",
+      "shortDescription": "Complete restaurant website with blogging page for customers and owners, showcase gallery for menu, online ordering system.",
+      "fullDescription": "A comprehensive restaurant website solution featuring online ordering, real-time order tracking, customer blogging platform, and administrative tools. Built with modern web technologies and Firebase for real-time functionality. Includes payment integration and customer management features.",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=800",
+      "tags": [
+        "Web Development",
+        "Firebase",
+        "Real-time Tracking",
+        "Authentication"
+      ],
+      "features": [
+        "Online menu showcase",
+        "Order management system",
+        "Real-time order tracking",
+        "Customer blogging platform",
+        "Table reservation system",
+        "Payment integration",
+        "Admin dashboard"
+      ],
+      "technologies": [
+        {
+          "name": "React",
+          "description": "Frontend user interface",
+          "category": "frontend"
+        },
+        {
+          "name": "Firebase",
+          "description": "Backend services and real-time database",
+          "category": "database"
+        },
+        {
+          "name": "Node.js",
+          "description": "Server-side logic",
+          "category": "backend"
+        },
+        {
+          "name": "Stripe",
+          "description": "Payment processing",
+          "category": "api"
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Real-time Order Tracking",
+          "description": "Implementing live order status updates for customers",
+          "solution": "Used Firebase real-time database with WebSocket connections"
+        }
+      ],
+      "timeline": [
+        {
+          "phase": "Design & Planning",
+          "duration": "1 week",
+          "description": "UI/UX design and feature planning"
+        },
+        {
+          "phase": "Frontend Development",
+          "duration": "4 weeks",
+          "description": "React components and user interface"
+        },
+        {
+          "phase": "Backend Integration",
+          "duration": "3 weeks",
+          "description": "Firebase setup and API development"
+        },
+        {
+          "phase": "Testing & Deployment",
+          "duration": "1 week",
+          "description": "System testing and deployment"
+        }
+      ],
+      "liveUrl": "",
+      "category": "web"
+    },
+    {
+      "slug": "attention-span-platform",
+      "title": "Attention Span Assessment Platform",
+      "shortDescription": "Website with 4 tasks to measure attention span based on reaction time, featuring authentication using Firebase, payment integration with RazorPay.",
+      "fullDescription": "A comprehensive psychology assessment platform designed to measure and analyze attention span through interactive tasks. The platform includes user authentication, payment processing, subscription management, and detailed analytics for both individual users and organizations.",
+      "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=800",
+      "tags": [
+        "Web Development",
+        "Firebase",
+        "RazorPay",
+        "Psychology Assessment"
+      ],
+      "features": [
+        "4 different attention assessment tasks",
+        "Real-time reaction time measurement",
+        "User authentication and profiles",
+        "Payment integration with RazorPay",
+        "Subscription management system",
+        "Detailed analytics and reports",
+        "Organization dashboard",
+        "Progress tracking"
+      ],
+      "technologies": [
+        {
+          "name": "React",
+          "description": "Frontend framework for interactive UI",
+          "category": "frontend"
+        },
+        {
+          "name": "Firebase",
+          "description": "Authentication and real-time database",
+          "category": "database"
+        },
+        {
+          "name": "RazorPay",
+          "description": "Payment gateway integration",
+          "category": "api"
+        },
+        {
+          "name": "Chart.js",
+          "description": "Data visualization for analytics",
+          "category": "tools"
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Accurate Reaction Time Measurement",
+          "description": "Ensuring precise timing measurements across different devices and browsers",
+          "solution": "Implemented high-resolution timing APIs with device calibration"
+        },
+        {
+          "title": "Subscription Management",
+          "description": "Creating flexible subscription plans for different organization sizes",
+          "solution": "Built modular subscription system with customizable features"
+        }
+      ],
+      "timeline": [
+        {
+          "phase": "Research & Design",
+          "duration": "2 weeks",
+          "description": "Psychology research and UI/UX design"
+        },
+        {
+          "phase": "Core Development",
+          "duration": "5 weeks",
+          "description": "Assessment tasks and timing system"
+        },
+        {
+          "phase": "Payment Integration",
+          "duration": "2 weeks",
+          "description": "RazorPay integration and subscription system"
+        },
+        {
+          "phase": "Testing & Launch",
+          "duration": "1 week",
+          "description": "User testing and deployment"
+        }
+      ],
+      "liveUrl": "",
+      "category": "web"
+    },
+    {
+      "slug": "doctors-ecommerce-website",
+      "title": "Doctor's Website with E-commerce",
+      "shortDescription": "Comprehensive website for a doctor with online booking and consultation features, integrated with an e-commerce platform for selling ayurvedic medicines.",
+      "fullDescription": "A complete healthcare website solution combining medical consultation services with e-commerce functionality. Built on the Wix platform, it features appointment scheduling, patient management, online consultations, and an integrated store for ayurvedic medicines with inventory management.",
+      "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80&w=800",
+      "tags": [
+        "Wix Development",
+        "E-commerce",
+        "Online Booking",
+        "Healthcare"
+      ],
+      "features": [
+        "Online appointment booking",
+        "Patient consultation scheduling",
+        "E-commerce store for medicines",
+        "Inventory management",
+        "Patient management system",
+        "Secure payment processing",
+        "Mobile-responsive design",
+        "SEO optimization"
+      ],
+      "technologies": [
+        {
+          "name": "Wix",
+          "description": "Website builder and hosting platform",
+          "category": "frontend"
+        },
+        {
+          "name": "Wix Stores",
+          "description": "E-commerce functionality",
+          "category": "tools"
+        },
+        {
+          "name": "Wix Bookings",
+          "description": "Appointment scheduling system",
+          "category": "tools"
+        },
+        {
+          "name": "Custom CSS",
+          "description": "Custom styling and responsive design",
+          "category": "frontend"
+        }
+      ],
+      "challenges": [
+        {
+          "title": "Integration Complexity",
+          "description": "Seamlessly integrating booking system with e-commerce functionality",
+          "solution": "Used Wix APIs and custom workflows to connect different modules"
+        },
+        {
+          "title": "Medical Compliance",
+          "description": "Ensuring the website meets healthcare industry standards",
+          "solution": "Implemented privacy policies and secure data handling practices"
+        }
+      ],
+      "timeline": [
+        {
+          "phase": "Planning & Design",
+          "duration": "1 week",
+          "description": "Requirements gathering and design mockups"
+        },
+        {
+          "phase": "Website Development",
+          "duration": "3 weeks",
+          "description": "Wix platform customization and setup"
+        },
+        {
+          "phase": "E-commerce Setup",
+          "duration": "2 weeks",
+          "description": "Store configuration and product catalog"
+        },
+        {
+          "phase": "Testing & Launch",
+          "duration": "1 week",
+          "description": "Quality assurance and go-live"
+        }
+      ],
+      "liveUrl": "",
+      "category": "web"
+    }
+  ],
+  "journey": [
+    {
+      "when": "Now",
+      "title": "Founder, VarSys",
+      "place": "Pondicherry",
+      "note": "Eight live products across web, Android and Windows, on infrastructure I run."
+    },
+    {
+      "when": "2023 - now",
+      "title": "Freelance full stack developer",
+      "place": "Remote",
+      "note": "Restaurant ordering, a doctor's booking + store site, and an attention assessment platform with RazorPay."
+    },
+    {
+      "when": "2023",
+      "title": "Python Developer Intern",
+      "place": "Tech Solutions Pvt Ltd, Pondicherry",
+      "note": "Inventory system, data dashboard and report generator in three months. Outstanding Intern award."
+    },
+    {
+      "when": "2022 - 2026",
+      "title": "B.E. Computer Science and Engineering",
+      "place": "Sri Venkateshwaraa College of Engineering and Technology",
+      "note": "CGPA 7.5."
+    }
+  ],
+  "stack": [
+    {
+      "label": "Languages",
+      "items": [
+        "TypeScript",
+        "JavaScript",
+        "Python",
+        "SQL",
+        "C / C++",
+        "Java"
+      ]
+    },
+    {
+      "label": "Interface",
+      "items": [
+        "React",
+        "Next.js",
+        "Tailwind",
+        "three.js",
+        "Capacitor"
+      ]
+    },
+    {
+      "label": "Back end",
+      "items": [
+        "Node.js",
+        "PostgreSQL",
+        "Better Auth",
+        "Appwrite",
+        "REST APIs"
+      ]
+    },
+    {
+      "label": "Operations",
+      "items": [
+        "Docker",
+        "Coolify",
+        "GitHub Actions",
+        "Linux",
+        "OpenBao"
+      ]
+    }
+  ],
+  "process": [
+    {
+      "title": "Understand the work",
+      "text": "A call to map who uses it, what they do today, and what has to be true on launch day."
+    },
+    {
+      "title": "Shape the first version",
+      "text": "Screens and data model agreed before code, with a fixed first scope you can sign off."
+    },
+    {
+      "title": "Build in the open",
+      "text": "Working builds you can click every week, not a reveal at the end."
+    },
+    {
+      "title": "Ship and run",
+      "text": "Deployed on proper infrastructure with backups, then supported and improved after launch."
+    }
+  ],
+  "needs": [
+    {
+      "slug": "site",
+      "label": "Website or landing page",
+      "hint": "Fast, findable, easy to update",
+      "stack": [
+        "React",
+        "SEO + Open Graph"
+      ],
+      "deliver": [
+        "Responsive site with light and dark themes",
+        "Search and share metadata"
+      ],
+      "proof": [
+        "kitchen",
+        "ev-hub"
+      ],
+      "weight": 1
+    },
+    {
+      "slug": "webapp",
+      "label": "Web app with logins",
+      "hint": "Accounts, roles, private data",
+      "stack": [
+        "React + TypeScript",
+        "Node.js API",
+        "PostgreSQL",
+        "Better Auth"
+      ],
+      "deliver": [
+        "Sign-in with roles",
+        "Core screens and data model"
+      ],
+      "proof": [
+        "joint-journey",
+        "docustore"
+      ],
+      "weight": 3
+    },
+    {
+      "slug": "mobile",
+      "label": "Android app",
+      "hint": "Same product on the phone",
+      "stack": [
+        "Capacitor Android"
+      ],
+      "deliver": [
+        "Signed Android build",
+        "Release through an update channel"
+      ],
+      "proof": [
+        "store",
+        "volttrack"
+      ],
+      "weight": 2
+    },
+    {
+      "slug": "admin",
+      "label": "Admin dashboard",
+      "hint": "Run the business from one screen",
+      "stack": [
+        "Dashboard UI",
+        "Role-based access"
+      ],
+      "deliver": [
+        "Admin panel for records and settings"
+      ],
+      "proof": [
+        "ev-hub",
+        "cooksuite"
+      ],
+      "weight": 2
+    },
+    {
+      "slug": "booking",
+      "label": "Bookings or orders",
+      "hint": "Customers book or buy online",
+      "stack": [
+        "Booking flow",
+        "Notifications"
+      ],
+      "deliver": [
+        "Booking or order flow with status tracking"
+      ],
+      "proof": [
+        "ev-hub",
+        "kitchen"
+      ],
+      "weight": 2
+    },
+    {
+      "slug": "payments",
+      "label": "Online payments",
+      "hint": "RazorPay or Stripe",
+      "stack": [
+        "RazorPay / Stripe"
+      ],
+      "deliver": [
+        "Checkout with payment confirmation"
+      ],
+      "proof": [
+        "kitchen"
+      ],
+      "weight": 1
+    },
+    {
+      "slug": "import",
+      "label": "Import from PDFs or sheets",
+      "hint": "Bills, statements, spreadsheets",
+      "stack": [
+        "PDF + statement parsing"
+      ],
+      "deliver": [
+        "Importer that checks and cleans incoming data"
+      ],
+      "proof": [
+        "volttrack",
+        "traqify"
+      ],
+      "weight": 2
+    },
+    {
+      "slug": "hosting",
+      "label": "Hosting and upkeep",
+      "hint": "Someone to keep it running",
+      "stack": [
+        "Docker + Coolify",
+        "Backups"
+      ],
+      "deliver": [
+        "Deployed with backups and monitoring",
+        "Ongoing fixes and updates"
+      ],
+      "proof": [
+        "store",
+        "docustore"
+      ],
+      "weight": 1
+    }
+  ],
+  "socials": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/CodeCraftsman-Jr"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/vasanthan-e-cse-5556a2327"
+    },
+    {
+      "label": "LeetCode",
+      "url": "https://leetcode.com/u/VasanthanVarsys/"
+    },
+    {
+      "label": "HackerRank",
+      "url": "https://www.hackerrank.com/dominicvasanth71"
+    },
+    {
+      "label": "YouTube (tech)",
+      "url": "https://www.youtube.com/@QUANTUMMOROW/featured"
+    }
+  ]
+}
