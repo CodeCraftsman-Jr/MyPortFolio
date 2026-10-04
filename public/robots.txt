@@ -14,7 +14,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://vasanthan.tech/sitemap.xml
+Sitemap: https://vasanthan.varsys.co.in/sitemap.xml
 
 # Crawl-delay for better server performance
 Crawl-delay: 1
